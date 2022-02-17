@@ -1,0 +1,48 @@
+// here goes styles globals
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.grid__container {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+    "navbar"
+    "main"
+    "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: 115px auto 343px;
+}
+
+.grid__container > * {
+  box-shadow: -1px 1px 7px 0 rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.text-color-primary {
+    color: $active;
+}
+
+.text-color-secondary {
+    color: $secondary;
+}
+
+.text-font-abel {
+    font-family: 'Abel', sans-serif;
+}
+
+.text-font-open-sans {
+    font-family: 'Abel', sans-serif;
+}
