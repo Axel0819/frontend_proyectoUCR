@@ -1,5 +1,46 @@
 .navbar {
     grid-area: navbar;
+    color: #FFFFFF;
+    font-family: 'Abel', sans-serif;
+    background-color: $primary;
     // font-family: 'Open Sans', sans-serif;
-    // font-family: 'Abel', sans-serif;
+}
+
+.navbar__logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar__icons i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.navbar__list {
+    font-size: 18px;
+}
+
+.navbar__list > * {
+    cursor: pointer;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 7.5px;
+    transition: all .2s ease-out;
+}
+
+.navbar__list > *:hover {
+    // color: $secondary;
+    border-radius: 1px;
+    outline: 1px solid $secondary;
+    background-color: #FFFFFF;
+    // background-color: #111D4A;
+    // text-decoration: underline $secondary;
+    color: $primary;
+}
+
+.navbar__item__active {
+    border-radius: 1px;
+    outline: 1px solid $secondary;
+    background-color: #FFFFFF;
+    color: $primary;
 }

@@ -24,12 +24,12 @@ html {
     grid-template-rows: 115px auto 343px;
 }
 
-.grid__container > * {
-  box-shadow: -1px 1px 7px 0 rgba(0, 0, 0, 0.75);
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
-}
+// .grid__container > * {
+//   box-shadow: -1px 1px 7px 0 rgba(0, 0, 0, 0.75);
+//   border-radius: 4px;
+//   padding: 10px;
+//   text-align: center;
+// }
 
 .text-color-primary {
     color: $active;
@@ -45,4 +45,8 @@ html {
 
 .text-font-open-sans {
     font-family: 'Abel', sans-serif;
+}
+
+.gap-40 {
+    gap: 40px;
 }
