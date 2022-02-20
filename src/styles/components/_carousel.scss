@@ -1,5 +1,6 @@
 .embla {
     overflow: hidden;
+    height: 100%;
 }
 
 .embla__container {
@@ -10,10 +11,3 @@
     position: relative;
     flex: 0 0 100%;
 }
-
-
-// @media (min-width: 1300px) {
-//     .embla {
-//         height: calc(100vh - 115px);
-//     }
-// }
