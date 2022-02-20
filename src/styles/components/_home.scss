@@ -1,8 +1,22 @@
+.home__header__title {
+    color: #FFF;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
 
+.home__header__title {
+    padding: 20px;
+    
+    h6 {
+        margin-bottom: 20px;
+        font-size: 100px;
+    }
 
-
-@media (min-width: 1300px) {
-    .home_header {
-        height: calc(100vh - 115px);
+    p {
+        font-size: 40px;
     }
 }

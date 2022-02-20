@@ -18,9 +18,10 @@ export default function ContactModal({modalIsOpen, closeModal, children}) {
     <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
         closeTimeoutMS={200}
-        contentLabel="Example Modal"    
+        contentLabel="Example Modal" 
+        className="modal"
+        overlayClassName="modal-fondo" 
       >
         <button onClick={closeModal}>close</button>
         {children}

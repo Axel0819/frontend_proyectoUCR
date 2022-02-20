@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
@@ -21,13 +21,3 @@ export const Carousel = ({children, options={ loop: true }}) => {
     </div>
   )
 }
-
-{/* <img
-                style={{
-                    objectFit: 'cover',
-                    width: '100%',
-                    height: '100%'
-                }}
-                src="" 
-                alt="Imagen de prueba 1" 
-            /> */}

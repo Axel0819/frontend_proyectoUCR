@@ -1,6 +1,5 @@
 .embla {
     overflow: hidden;
-    height: 100%;
 }
 
 .embla__container {
@@ -10,4 +9,8 @@
 .embla__slide {
     position: relative;
     flex: 0 0 100%;
+}
+
+.embla__slide__fullHeight {
+    height: calc(100vh - #{$navbar-height});
 }
