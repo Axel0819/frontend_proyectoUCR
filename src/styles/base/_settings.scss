@@ -7,10 +7,27 @@ $sucess: #43AF79;
 $danger: #DE5246;
 
 //colors icons
-$icon-color-facebook: #4267B2;
-$icon-color-instagram: #405DE6;
-$icon-color-youtube: #FF0000;
-$icon-color-whatsapp: #25D366;
+// $icon-color-facebook: #4267B2;
+// $icon-color-instagram: #405DE6;
+// $icon-color-youtube: #FF0000;
+// $icon-color-whatsapp: #25D366;
+
+//proof
+$colors-icons: (
+    icon-color-facebook: #4267B2,
+    icon-color-instagram: #405DE6,
+    icon-color-youtube: #FF0000,
+    icon-color-whatsapp: #25D366
+);
+
+// Generate class colors icons
+@each $color, $value in $colors-icons {
+    .#{$color} {
+        background-color: $value;
+    }
+}
+
+//map-get($color-config, white); // will return #FFF
 
 
 // Sizes container

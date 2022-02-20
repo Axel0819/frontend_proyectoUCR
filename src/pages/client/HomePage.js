@@ -1,3 +1,5 @@
+import { SocialMedia } from "../../components/client/home/SocialMedia";
+import { Container } from "../../components/client/layouts/Container";
 import { Carousel } from "../../components/client/ui/Carousel";
 import { ItemCarousel } from "../../components/client/ui/ItemCarousel";
 
@@ -34,13 +36,18 @@ export default function HomePage() {
                     backgroundColor: 'rgba(0, 0, 0, 0.40)',
                     height: '100%'
                 }}
-                src={`https://picsum.photos/108${photo}/1080`} 
+                src={`https://picsum.photos/192${photo}/822`} 
                 alt={`Esto es una foto de prueba`} 
             />
             </ItemCarousel>
             ))
           }
         </Carousel>
+
+        <Container>
+          <SocialMedia isLeft={true}/>
+        </Container>
+
       </header>
     </>
   )
