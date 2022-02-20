@@ -7,6 +7,9 @@ import './styles/styles.scss'; // styles globals
 
 import './config/i18n' // config tranductions
 
+//Tareas pendientes
+//1. Crear el menu reponsive
+
 ReactDOM.render(
   <StrictMode>
     <App />

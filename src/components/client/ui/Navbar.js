@@ -13,7 +13,7 @@ export default function Navbar({openModalContact, openModalTranslate}) {
     return (
         <nav className="navbar flex flex-column justify-content-center">
             <Container>
-                <div className="flex align-items-center justify-content-between">
+                <div className="flex align-items-center justify-content-between flex-wrap">
 
                     <div className="navbar__logo">
                         <Link to="/">
@@ -21,7 +21,7 @@ export default function Navbar({openModalContact, openModalTranslate}) {
                         </Link>
                     </div>
 
-                    <div className="flex justify-content-between gap-40 navbar__list">
+                    <div className="flex justify-content-between flex-wrap gap-40 navbar__list">
                         <Link to="/">Inicio</Link>
                         {/* <Link>Quienes Somos?</Link> */}
                         
