@@ -18,7 +18,9 @@ export default function HomePage() {
           </p>
         </div>
 
-        <Carousel>
+        {
+          // data.length > 0 && // El carousel se despliega solo si existe informacion
+          <Carousel>
           {
             [1, 2, 3].map((photo) => (
             <ItemCarousel key={photo} fullHeight={true}>
@@ -43,6 +45,9 @@ export default function HomePage() {
             ))
           }
         </Carousel>
+        }
+
+        
 
         <Container>
           <SocialMedia isLeft={true}/>

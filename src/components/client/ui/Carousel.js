@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
@@ -10,8 +10,12 @@ export const Carousel = ({children, options={ loop: true }}) => {
       )
   )
 
-  const [emblaRef] = useEmblaCarousel(options,
-    [autoplay.current])
+  const [emblaRef, embla] = useEmblaCarousel(options, [autoplay.current])
+
+  useEffect(() => {
+    embla && embla.reInit(options, [autoplay.current])
+    return () => embla && embla.destroy();
+  }, [embla, options]);
 
   return (
     <div className="embla" ref={emblaRef}>
