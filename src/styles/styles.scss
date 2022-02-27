@@ -2,9 +2,19 @@
 @import './base/base';
 
 //components
-@import './components/navbar';
-@import './components/main';
-@import './components/footer';
-@import './components/carousel';
-@import './components/home';
-@import './components/_socialMedia.scss';
+
+//client
+//components for home
+@import './components/client/home/main';
+@import './components/client/home/home';
+@import './components/client/home/socialMedia';
+@import './components/client/home/containerResponsive';
+
+@import './components/client/ui/navbar';
+//components for ui client
+@import './components/client/ui/footer';
+
+//admin
+
+//general ui
+@import './components/ui/carousel';

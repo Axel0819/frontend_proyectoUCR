@@ -1,0 +1,9 @@
+
+@media (max-width: 576px) {
+    .container__responsive {
+        flex-direction: column-reverse;
+        gap: 20px;
+        height: 100vh !important;
+        padding: 1em;
+    }
+}

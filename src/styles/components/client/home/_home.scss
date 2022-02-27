@@ -31,3 +31,12 @@
         }
     }
 }
+
+.container__country {
+    
+    img {
+        @media (max-width: 576px) {
+            width: 50px;
+        }
+    }
+}
