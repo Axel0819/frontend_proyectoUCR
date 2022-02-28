@@ -1,43 +1,6 @@
-import classNames from "classnames"
-
-
-// Esta lista debe de estar en otro archivo
-const socialMedia = [
-    {
-        name: 'facebook',
-        link: 'https://www.youtube.com/c/midudev'
-    },
-    {
-        name: 'instagram',
-        link: 'https://www.youtube.com/c/midudev'
-    },
-    {
-        name: 'youtube',
-        link: 'https://www.youtube.com/c/midudev'
-    },
-    {
-        name: 'whatsapp',
-        link: 'https://www.youtube.com/c/midudev'
-    }
-]
-
-// Este item debe de estar en otro archivo
-const ItemSocial = ({name, link}) => {
-
-    // el manejo de los iconos puede fallar debido al nombre de la clase de la etiqueta <i>
-    // Solo se programo para estos iconos mientras tanto
-    const classI = classNames('fa-brands', {
-        'fa-facebook-f': name === 'facebook',
-        [`fa-${name}`]: name !== 'facebook'
-    })
-    return (
-        <a rel="noreferrer" href={link} target="_blank">
-                <div className={`social__media__icon icon-color-${name}`}>
-                        <i className={classI}></i>
-                </div>
-        </a>
-    )
-}
+import classNames from 'classnames'
+import { socialMedia } from '../../../data/socialMedia'
+import { ItemSocialMedia } from './ItemSocialMedia'
 
 export const SocialMedia = ({isLeft}) => {
 
@@ -53,7 +16,7 @@ export const SocialMedia = ({isLeft}) => {
 
             {
                 socialMedia.map( ({name, link}) => (
-                    <ItemSocial key={Math.random().toString(36).slice(2)} name={name} link={link}/>
+                    <ItemSocialMedia key={Math.random().toString(36).slice(2)} name={name} link={link}/>
                 ))
             }
 

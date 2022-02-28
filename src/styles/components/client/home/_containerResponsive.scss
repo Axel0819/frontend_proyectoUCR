@@ -1,9 +1,10 @@
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
     .container__responsive {
         flex-direction: column-reverse;
+        align-content: center;
         gap: 20px;
-        height: 100vh !important;
+        height: auto !important;
         padding: 1em;
     }
 }
