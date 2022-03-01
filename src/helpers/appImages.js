@@ -1,1 +1,3 @@
-export const appImages = require.context('../assets/', true)
+export const appImages = require.context('../assets/images/', true)
+
+export const imgContrySvg = require.context('../assets/svg/', true)

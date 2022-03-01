@@ -1,23 +1,23 @@
 import { Container } from '../layouts/Container'
 import { ContainerResponsive } from '../layouts/ContainerResponsive'
 
-import logoBlack from '../../../assets/images/logoBlack.png'//'../../assets/images/logoBlack.png';
-import { TitleSection } from './TitleSection';
+import logoBlack from '../../../assets/images/logoBlack.png'
+import { TitleSection } from './TitleSection'
 
-const imgSvg = require.context('../../../assets/svg/')
+import { imgContrySvg } from '../../../helpers/appImages'
 
-export const SectionOne = () => {
+export const SectionInfoCecamm = () => {
     return (
         <Container>
             <ContainerResponsive>
                 <div className="xl:col-5 lg:col-5 md:col-12 sm:col-12 flex flex-column justify-content-center gap-50">
-                    <TitleSection title={'Centro de Capacitación de Marina Mercante'} />
+                    <TitleSection title={'Centro de Capacitación de Marina Mercante de la Universidad de Costa Rica'} />
                     <div className="flex gap-50 container__country">
                         {
-                            ['./PaisU.svg', './PaisC.svg', './PaisR.svg'].map((pais, i) => (
+                            imgContrySvg.keys().map((pais, i) => (
                                 <img 
                                     key={pais + i} 
-                                    src={imgSvg(pais)} 
+                                    src={imgContrySvg(pais)} 
                                     alt="Imagen de país" 
                                 />
                             ))
