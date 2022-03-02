@@ -24,7 +24,7 @@ export const SectionInfoCecamm = () => {
                         }
                     </div>
 
-                    <p className="text-font-open-sans spacing">
+                    <p className="text-font-open-sans spacing text-color-description">
                         Como parte de una iniciativa para cubrir las necesidades de capacitación en el ambito de la marina mercante se crea el CECAMM, como un centro de formación que se proyecta para ocupar oportunamente el rol de formación.
                     </p>
                 </div>
