@@ -67,6 +67,16 @@
                 padding-left: 0 !important;
                 padding-right: 0 !important; 
             }
+
+            .containerItemPanel {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+
+                .accordion__panel {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+            }
         }
     }
 }

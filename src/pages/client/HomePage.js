@@ -12,6 +12,7 @@ export default function HomePage() {
       <SectionInfoCecamm />
       <Divider />
       <SectionInfoLloyds />
+      <Divider />
     </>
   )
 }
