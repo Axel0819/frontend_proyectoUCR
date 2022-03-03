@@ -9,8 +9,8 @@ import { imgContrySvg } from '../../../helpers/appImages'
 export const SectionInfoCecamm = () => {
     return (
         <Container>
-            <ContainerResponsive>
-                <div className="xl:col-5 lg:col-5 md:col-12 sm:col-12 flex flex-column justify-content-center gap-50">
+            <ContainerResponsive reverse={true}>
+                <div className="xl:col-5 lg:col-5 md:col-12 sm:col-12 col__item flex flex-column justify-content-center gap-50">
                     <TitleSection title={'Centro de Capacitación de Marina Mercante de la Universidad de Costa Rica'} />
                     <div className="flex gap-50 container__country">
                         {
@@ -27,8 +27,9 @@ export const SectionInfoCecamm = () => {
                     <p className="text-font-open-sans spacing text-color-description">
                         Como parte de una iniciativa para cubrir las necesidades de capacitación en el ambito de la marina mercante se crea el CECAMM, como un centro de formación que se proyecta para ocupar oportunamente el rol de formación.
                     </p>
+
                 </div>
-                <div className="xl:col-7 lg:col-7 md:col-12 sm:col-12 flex justify-content-center align-items-center container__logo">
+                <div className="xl:col-7 lg:col-7 md:col-12 sm:col-12 col__item flex justify-content-center align-items-center container__logo">
                     <div>
                         <img src={logoBlack} alt="Logo CECAMM" />
                     </div>

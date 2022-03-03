@@ -1,15 +1,16 @@
-// import classNames from 'classnames'
+import classNames from 'classnames'
 
-export const ContainerResponsive = ({children}) => {
+export const ContainerResponsive = ({children, reverse}) => {
     // es necesario que se renderice?
     // const classContainer = classNames('grid', 'grid-nogutter',{
     //     'flex-column-reverse': window.innerWidth <= 576
     // })
+    const classContainer = classNames('grid', 'grid-nogutter', 'container__responsive', 'justify-content-center',{
+        'container__responsive__reverse': reverse
+    })
 
     return (
-        <div style={{
-            height: '638px'
-        }} className="grid grid-nogutter container__responsive justify-content-center">
+        <div className={classContainer}>
             {children}
         </div>
     )

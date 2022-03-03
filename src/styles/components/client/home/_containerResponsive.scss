@@ -1,10 +1,29 @@
 
-@media (max-width: 992px) {
-    .container__responsive {
-        flex-direction: column-reverse;
+.container__responsive {
+    // width: 100vw;
+    height: 638px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    @media (max-width: 992px) {
         align-content: center;
         gap: 20px;
-        height: auto !important;
-        padding: 1em;
+        height: auto;
+
+        div {
+            padding-left: 1em;
+            padding-right: 1em;
+            p {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }
+    }
+
+}
+
+.container__responsive__reverse {
+    @media (max-width: 992px) {
+        flex-direction: column-reverse;
     }
 }
