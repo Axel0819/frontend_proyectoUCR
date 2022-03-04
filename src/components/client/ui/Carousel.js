@@ -2,10 +2,11 @@ import { useEffect, useRef } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-export const Carousel = ({children, options={ loop: true }}) => {
+export const Carousel = ({children, options={ loop: true }, play=true }) => {
+
   const autoplay = useRef(
       Autoplay(
-          {delay: 3000, stopOnInteraction: false},
+          {delay: 3000, stopOnInteraction: false, playOnInit: play},
           (emblaRoot) => emblaRoot.parentElement
       )
   )
