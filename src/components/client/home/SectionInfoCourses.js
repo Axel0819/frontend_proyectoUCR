@@ -13,9 +13,13 @@ export function SectionInfoCourses() {
                         title={'Nuestra oferta académica'}
                     />
                     <div className="px-3">
-                        <Carousel play={false}> 
+                        <Carousel options={{
+                            loop: true,
+                            containScroll: "keepSnaps",
+                            align: 'start'
+                        }} play={true}> 
                             {
-                                [1, 2, 3].map(item => (
+                                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => (
                                     <ItemCarousel key={item} fullHeight={false}>
                                         <div style={{
                                             width: '300px',

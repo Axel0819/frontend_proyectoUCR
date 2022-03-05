@@ -6,11 +6,16 @@
     display: flex;
 }
 
+
+// por defecto el padding sera de 10px
 .embla__slide {
     position: relative;
-    flex: 0 0 100%;
+    padding-left: 10px;
+    // flex: 0 0 100%;
 }
 
 .embla__slide__fullHeight {
     height: calc(100vh - #{$navbar-height});
+    flex: 0 0 100%;
+    padding-left: 0;
 }
