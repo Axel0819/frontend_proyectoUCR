@@ -1,3 +1,4 @@
+import { CardCourse } from "../cards/CardCourse";
 import { Container } from "../layouts/Container";
 import { ContainerResponsive } from "../layouts/ContainerResponsive";
 import { Carousel } from "../ui/Carousel";
@@ -7,7 +8,7 @@ import { TitleSection } from "./TitleSection";
 export function SectionInfoCourses() {
     return (
         <Container>
-            <ContainerResponsive>
+            <ContainerResponsive heightAuto={true}>
                 <div className="col-12 flex flex-column gap-50">
                     <TitleSection 
                         title={'Nuestra oferta académica'}
@@ -21,16 +22,14 @@ export function SectionInfoCourses() {
                             {
                                 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => (
                                     <ItemCarousel key={item} fullHeight={false}>
-                                        <div style={{
-                                            width: '300px',
-                                            height: '300px',
-                                            backgroundColor: "gray"
-                                        }} className="flex justify-content-center align-items-center ">
-                                            {item}
-                                        </div>
+                                        <CardCourse />
                                     </ItemCarousel>
                                 ))
                             }
+
+                            {/* <ItemCarousel fullHeight={false}>
+                                <CardCourse />
+                            </ItemCarousel> */}
                         </Carousel>
                     </div>
                 </div>

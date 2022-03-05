@@ -1,0 +1,70 @@
+.card__course {
+    width: 425px;
+    border-radius: 2px;
+    // border: 1px solid $active;
+    // background-color: red;
+
+    @media (max-width: 576px) {
+        width: 100%;
+    }
+
+    .card__head {
+
+        span {
+            display: grid;
+            place-content: center;
+            background-color: $sucess;
+            border-radius: 5px 0 5px 5px;
+            font-size: 24px;
+            color: white;
+            width: 105px;
+            height: 51px;
+            padding: 10px 20px;
+        }
+
+        .card__title {
+            gap: 5px;
+
+            h2 {
+                font-weight: 400;
+            }
+
+            small {
+                color: $active;
+                font-size: 16px;
+            }
+        }
+    }
+    
+    .card__img {
+        width: 100%;
+        height: 200px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .card__body {
+        color: $secondary;
+        font-family: 'Open Sans', sans-serif;
+
+        .card__body__description {
+            height: 130px;
+            overflow-y: scroll;
+        }
+
+        .card__body__footer {
+            font-size: 14px;
+
+            .card_more {
+                gap: 5px;
+                color: $active;
+            }
+
+        }
+    }
+
+}
