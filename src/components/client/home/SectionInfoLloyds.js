@@ -24,7 +24,8 @@ export function SectionInfoLloyds() {
 
                     <AccordionApp 
                         title={'Más información sobre Lloyd’s Register'}
-                        description={descriptionLloydR} 
+                        description={descriptionLloydR}
+                        isBlack={true} 
                     /> 
                 </div>
             </ContainerResponsive>
