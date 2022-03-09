@@ -10,7 +10,6 @@ export default function HomePage() {
 
   return (
     <>
-    
       <Header />
       <SectionInfoCecamm />
       <Divider />
@@ -20,8 +19,8 @@ export default function HomePage() {
       <Divider />
       <SectionInfoEquip />
       <Divider />
-      {/* <SectionInfoCourses /> */}
-      {/* <CardCourse /> */}
+      <SectionInfoCecamm />
+      <SectionInfoCecamm />
     </>
   )
 }

@@ -26,10 +26,6 @@ export function SectionInfoCourses() {
                                     </ItemCarousel>
                                 ))
                             }
-
-                            {/* <ItemCarousel fullHeight={false}>
-                                <CardCourse />
-                            </ItemCarousel> */}
                         </Carousel>
                     </div>
                 </div>
