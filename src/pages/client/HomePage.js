@@ -19,8 +19,6 @@ export default function HomePage() {
       <Divider />
       <SectionInfoEquip />
       <Divider />
-      <SectionInfoCecamm />
-      <SectionInfoCecamm />
     </>
   )
 }
