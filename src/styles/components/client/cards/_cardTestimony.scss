@@ -1,0 +1,38 @@
+.card__testimony {
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 600px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .card__testimony__img {
+        height: 300px;
+
+        img {
+            border-radius: 50%
+        }
+    }
+
+    .card__testimony__title {
+        margin-top: 20px;
+
+        p {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        small {
+            font-size: 14px;
+            color: $active;
+            font-weight: 400;
+        }
+    }
+
+    .card__testimony__description {
+        margin-top: 40px;
+        line-height: 32px;
+
+        i {
+            color: $active;
+        }
+    }
+}

@@ -4,6 +4,7 @@ import { SectionInfoLloyds } from '../../components/client/home/SectionInfoLloyd
 import { Divider } from '../../components/client/ui/Divider';
 import { SectionInfoCourses } from '../../components/client/home/SectionInfoCourses';
 import { SectionInfoEquip } from '../../components/client/home/SectionInfoEquip';
+import { SectionInfoTestim } from '../../components/client/home/SectionInfoTestim';
 
 export default function HomePage() {
   //estudiar la propiedad transform y translate de css
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Divider />
       <SectionInfoEquip />
       <Divider />
+      <SectionInfoTestim />
     </>
   )
 }
