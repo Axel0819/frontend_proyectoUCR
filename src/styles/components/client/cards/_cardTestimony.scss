@@ -1,14 +1,25 @@
 .card__testimony {
     padding: 20px;
     border-radius: 5px;
-    min-height: 600px;
+    min-height: 748px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 1279px) {
+        min-width: 572px;
+        height: 620px;
+    }
+
+    @media (max-width: 576px) {
+        min-width: 100%;
+        height: 748px;
+    }
 
     .card__testimony__img {
         height: 300px;
 
         img {
-            border-radius: 50%
+            border-radius: 50%;
+            object-fit: contain;
         }
     }
 

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
+// proof se refiere a si el carousel esta listo para montarse
 export const Carousel = ({ children, options = { loop: true }, play = true, proof=true}) => {
 
   const autoplay = useRef(

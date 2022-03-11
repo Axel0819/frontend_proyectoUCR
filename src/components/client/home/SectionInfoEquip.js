@@ -61,7 +61,8 @@ export function SectionInfoEquip() {
                                 [1, 2, 3].map(item => (
                                     <ItemCarousel key={item} fullHeight={true}>
                                         <img style={{
-                                            objectFit: 'cover'
+                                            objectFit: 'cover',
+                                            borderRadius: '5px'
                                         }} width="100%" height="100%" src={`https://picsum.photos/76${item}/700`} alt="imagen de prueba 9s" />
                                     </ItemCarousel>
                                 ))
