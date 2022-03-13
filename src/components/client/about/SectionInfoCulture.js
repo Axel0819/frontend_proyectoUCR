@@ -27,7 +27,7 @@ export function SectionInfoCulture() {
                                 }
                             </Carousel>
                         ) : (
-                            <div className="grid">
+                            <div className="grid px-3">
                                 {
                                     dataCulture.map((data, i) => (
                                         <div key={data.title + i} className="col-4">
