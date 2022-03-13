@@ -1,0 +1,20 @@
+.container__title {
+    height: 100px;
+    background-color: $primary;
+
+    * {
+        padding: 0 !important;
+    }
+
+    .container-items {
+
+        p {
+            font-size: 50px;
+            color: #FFF;
+        }
+
+        @media (max-width: 576px){
+            justify-content: center !important;
+        }
+    }
+}

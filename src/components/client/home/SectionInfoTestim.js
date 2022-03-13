@@ -18,7 +18,7 @@ export function SectionInfoTestim() {
                         <Carousel options={{
                             loop: true,
                             align: 'center'
-                        }} proof={window.innerWidth <= 1280}>
+                        }}>
                             {
                                 testimomialsData.map(data => (
                                     <ItemCarousel key={data.img} fullHeight={false}>

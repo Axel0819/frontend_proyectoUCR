@@ -4,6 +4,12 @@
 //components
 
 //client
+//cards
+@import './components/client/cards/cardCountries';
+@import './components/client/cards/cardCourse';
+@import './components/client/cards/cardTestimony';
+@import './components/client/cards/cardCulture';
+
 //components for home
 @import './components/client/home/main';
 @import './components/client/home/home';
@@ -12,15 +18,18 @@
 @import './components/client/home/titleSection';
 @import './components/client/home/sectionInfoCecamm';
 @import './components/client/home/header';
-@import './components/client/cards/cardCourse';
 @import './components/client/home/sectionInfoEquip';
-@import './components/client/cards/cardTestimony';
+
+//components for aboutus
+@import './components/client/about/about';
+@import './components/client/about/sectionInfoDescrip'; 
 
 //components for ui client
 @import './components/client/ui/navbar';
 @import './components/client/ui/footer';
 @import './components/client/ui/accordionApp';
 @import './components/client/ui/divider';
+@import './components/client/ui/titleSectionPage';
 
 //admin
 

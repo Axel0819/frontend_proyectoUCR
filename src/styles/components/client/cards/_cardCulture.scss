@@ -1,0 +1,43 @@
+.card__culture {
+    padding: 20px;
+    height: 684px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 1279px) {
+        width: 574px;
+    }
+
+    @media (max-width: 576px) {
+        width: 100%;
+        height: 90vh;
+    }
+    
+    h1 {
+        font-size: 36px;
+        color: $secondary;
+        font-weight: 400;
+    }
+
+    .container__icon {
+
+        i {
+            font-size: 150px;
+            color: $active;
+        }
+    }
+
+    p, li{
+        line-height: 32px;
+        color: $secondary;
+    }
+
+    ul li::marker {
+        margin: 0 0.5rem 0 0;
+        color: $active;
+    }
+
+    ul {
+        padding: 0 20px;
+    }
+
+}

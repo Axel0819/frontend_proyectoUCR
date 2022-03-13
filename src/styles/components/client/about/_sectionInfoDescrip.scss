@@ -1,0 +1,17 @@
+.container__info {
+    width: 60vw;
+
+    @media (max-width: 800px) {
+        width: auto;
+    }
+
+    .container__subtitle {
+        font-size: 22px;
+        color: $active;
+    }
+
+    .container__description {
+        color: $secondary;
+        line-height: 32px;
+    }
+}

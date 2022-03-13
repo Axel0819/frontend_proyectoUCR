@@ -1,0 +1,16 @@
+.container__country {
+    
+    img {
+        max-width: 100px;
+        min-width: 20px;
+
+        @media (max-width: 576px) {
+            width: 50px;
+        }
+    }
+
+    .img-small {
+        max-width: 50px;
+        min-width: 20px;
+    }
+}   
