@@ -22,7 +22,10 @@
 
 //components for aboutus
 @import './components/client/about/about';
-@import './components/client/about/sectionInfoDescrip'; 
+@import './components/client/about/sectionInfoDescrip';
+
+//Components for course page
+@import './components/client/course/sectionInfoCurse';
 
 //components for ui client
 @import './components/client/ui/navbar';
