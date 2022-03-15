@@ -10,18 +10,6 @@
 
     .card__head {
 
-        span {
-            display: grid;
-            place-content: center;
-            background-color: $sucess;
-            border-radius: 5px 0 5px 5px;
-            font-size: 24px;
-            color: white;
-            width: 105px;
-            height: 51px;
-            padding: 10px 20px;
-        }
-
         .card__title {
             gap: 5px;
 

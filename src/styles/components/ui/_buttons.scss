@@ -1,0 +1,35 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+
+    transition: color .3s ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: darken($color: white, $amount: 12);
+    }
+}
+
+.btn-primary {
+    background-color: $active;
+    border-radius: 5px;
+
+    &:disabled {
+        background-color: lighten($color: $active, $amount: 15);
+    }
+
+    &:hover {
+        background-color: darken($color: $active, $amount: 15);
+    }
+}
+
+
+.btn-font-size-24 {
+    font-size: 24px;
+}

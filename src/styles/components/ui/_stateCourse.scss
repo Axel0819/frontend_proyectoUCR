@@ -1,0 +1,18 @@
+.state__course {
+    display: grid;
+    place-content: center;
+    border-radius: 5px 0 5px 5px;
+    font-size: 24px;
+    color: white;
+    width: 105px;
+    height: 51px;
+    padding: 10px 20px;
+}
+
+.state__course.state__course__open {
+    background-color: $sucess;
+}
+
+.state__course.state__course__close {
+    background-color: $danger;
+}

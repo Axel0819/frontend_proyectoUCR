@@ -4,7 +4,7 @@ export function CardCourse() {
     <div className="card__course pb-3">
         <div className="card__head mb-3">
             <div className="flex justify-content-end">
-                <span className="text-font-abel">Abierto</span>
+                <span className="text-font-abel state__course state__course__open">Abierto</span>
             </div>
 
             <div className="card__title flex flex-column">

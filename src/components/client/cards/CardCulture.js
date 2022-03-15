@@ -1,5 +1,6 @@
 import React from 'react'
 
+//TODO: ARREGLAR TAMAÑO DE CARTA (HEIGTH)
 export function CardCulture({ title, icon, description }) {
     return (
         <div className="card__culture flex flex-column gap-20">

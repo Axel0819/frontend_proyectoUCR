@@ -10,11 +10,90 @@
         // border: 1px solid white;
         background-color: $secondary;
         color: #FFFFFF;
+        padding-right: 20px;
+
+        @media (max-width: 992px) {
+            border-radius: 5px;
+            padding-left: 20px;
+        }
+
+        @media (max-width: 576px) {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        p {
+            line-height: 32px;
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: underline;
+
+            div {
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
     }
     
     .section__info__buy {
         padding-left: 20px;
-        background-color: #FFFFFF;
         color: $secondary;
+
+        @media (max-width: 992px) {
+            padding-top: 20px !important;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 576px) {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        .buy__header {
+            gap: 10px;
+
+            @media (max-width: 576px) {
+                flex-direction: column;
+            }
+
+            h1 {
+                color: $secondary;
+            }
+
+            span {
+                margin-bottom: 10px;
+            }
+        }
+
+        .buy__details {
+            font-family: 'Open Sans', sans-serif;
+
+            i {
+                color: $active;
+            }
+        }
+
+        .buy__action {
+            margin-top: 20px;
+
+            small {
+                color: $secondary;
+                font-size: 12px;
+            }
+        }
     }
 }
+
+.section__info__title {
+    font-weight: 400;
+    font-size: 36px;
+}
+
