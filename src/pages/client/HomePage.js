@@ -6,6 +6,8 @@ import { SectionInfoCourses } from '../../components/client/home/SectionInfoCour
 import { SectionInfoEquip } from '../../components/client/home/SectionInfoEquip';
 import { SectionInfoTestim } from '../../components/client/home/SectionInfoTestim';
 
+import { testimomials  } from '../../data/testimonials'
+
 export default function HomePage() {
   //estudiar la propiedad transform y translate de css
 
@@ -20,7 +22,13 @@ export default function HomePage() {
       <Divider />
       <SectionInfoEquip />
       <Divider />
-      <SectionInfoTestim />
+
+
+      <SectionInfoTestim 
+        titleSection={"Testimonios"}
+        subtitleCard={"Cadete del CECAMM-UCR"}
+        comments={testimomials}
+      />
     </>
   )
 }

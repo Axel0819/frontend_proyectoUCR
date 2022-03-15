@@ -4,12 +4,11 @@ import { Container } from '../layouts/Container'
 import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel'
 import { TitleSection } from './TitleSection'
-import { testimomials as testimomialsData } from '../../../data/testimonials'
 
-export function SectionInfoTestim() {
+export function SectionInfoTestim({titleSection, subtitleCard, comments}) {
     return (
         <Container>
-            <TitleSection title={'Testimonios'} />
+            <TitleSection title={titleSection} />
 
             <div className="px-3 my-4">
 
@@ -20,9 +19,9 @@ export function SectionInfoTestim() {
                             align: 'center'
                         }}>
                             {
-                                testimomialsData.map(data => (
+                                comments.map(data => (
                                     <ItemCarousel key={data.img} fullHeight={false}>
-                                        <CardTestimony {...data}/>
+                                        <CardTestimony subtitleCard={subtitleCard} {...data}/>
                                     </ItemCarousel>
                                 ))
                             }
@@ -30,9 +29,9 @@ export function SectionInfoTestim() {
                     ) : (
                         <div className="grid">
                             {
-                                testimomialsData.map(data => (
+                                comments.map(data => (
                                     <div key={data.img} className="col-4">
-                                        <CardTestimony {...data}/>
+                                        <CardTestimony subtitleCard={subtitleCard} {...data}/>
                                     </div>
                                 ))
                             }

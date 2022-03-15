@@ -1,6 +1,7 @@
 import { imgTestimonials } from "../../../helpers/appImages"
 
-export function CardTestimony({name, img, description}) {
+export function CardTestimony({name, img, description, subtitleCard}) {
+    console.log(subtitleCard);
     return (
         <div className="card__testimony">
             <div className="card__testimony__img flex justify-content-center">
@@ -9,7 +10,7 @@ export function CardTestimony({name, img, description}) {
 
             <div className="card__testimony__title w-full">
                 <p className="text-font-abel">{name}</p>
-                <small className="text-font-open-sans">Cadete del CECAMM-UCR</small>
+                <small className="text-font-open-sans">{subtitleCard}</small>
             </div>
 
             <p className="card__testimony__description text-font-open-sans">

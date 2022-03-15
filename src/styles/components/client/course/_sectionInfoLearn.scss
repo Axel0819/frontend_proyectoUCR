@@ -1,0 +1,71 @@
+.learn__container__list {
+    position: relative;
+    // background-color: green;
+    border-top: 2px solid $active;
+    border-right: 2px solid $active;
+    border-bottom: 2px solid $active;
+    border-radius: 0 5px 5px 0;
+    color: $secondary;
+
+    @media (max-width: 992px) {
+        border-right: 0 solid;
+        border-radius: 0;
+    }
+
+    .learn__list__title {
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid $active;
+        display: inline-block;
+        position: absolute;
+        left: 5%;
+        top: -27px;
+        background-color: white;
+
+        @media (max-width: 576px) {
+            left: 5%;
+            right: 5%;
+            top: -5%;
+        }
+
+        p {
+            font-size: 24px;
+        }
+    }
+
+    .learn__list__body {
+        ul {
+            list-style-type: decimal;
+        }
+
+        ul li{
+            line-height: 32px;
+            color: $secondary;
+        }
+    
+        ul li::marker {
+            margin: 0 0.5rem 0 0;
+            color: $active;
+        }
+    
+        ul {
+            padding: 0 20px;
+        }
+
+        @media (max-width: 576px) {
+            padding: 15% 5% 5% 5%;
+        }
+    }
+}
+
+.learn__container__imgs {
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+        @media (max-width: 576px) {
+            padding: 0 16px;
+        }
+    }
+}

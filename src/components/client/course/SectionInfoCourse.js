@@ -42,7 +42,7 @@ export function SectionInfoCourse({
                                     <p>Fecha de inicio: {dateInit}</p>
                                 </div>
                                 <div className="details__item align-items-center flex gap-10">
-                                    <i class="fa-solid fa-calendar-check"></i>
+                                    <i className="fa-solid fa-calendar-check"></i>
                                     <p>Fecha de finalización: {dateFinally}</p>
                                 </div>
                                 <div className="details__item align-items-center flex gap-10">
@@ -53,7 +53,10 @@ export function SectionInfoCourse({
                         </div>
                         <div className="flex justify-content-between align-items-end buy__action">
                             <small className="text-font-abel">*La transacción está sujeta al número de cupos existentes*</small>
-                            <button className="btn btn-primary btn-font-size-24 text-font-abel">Comprar</button>
+                            <button 
+                                className="btn btn-primary btn-font-size-24 text-font-abel"
+                                onClick={() => alert('Se procede a comprar el curso')}
+                            >Comprar</button>
                         </div>
                     </div>
                 </ContainerResponsive>
