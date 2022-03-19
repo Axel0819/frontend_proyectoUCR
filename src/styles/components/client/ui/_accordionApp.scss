@@ -51,7 +51,16 @@
 }
 
 
-.accordion__panel {
+// .accordion__panel {
+//     max-height: 200px;
+//     overflow-y: scroll;
+    
+//     p {
+//         line-height: 32px;
+//     }
+// }
+
+.panel__text {
     max-height: 200px;
     overflow-y: scroll;
     

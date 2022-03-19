@@ -8,8 +8,9 @@ import { descriptionLloydR } from '../../../data/textLarge'
 
 export function SectionInfoLloyds() {
     return (
+        <div className='my-8'>
         <Container>
-            <ContainerResponsive reverse={false}>
+            <ContainerResponsive reverse={false} heightAuto={true}>
                 <div className="xl:col-7 lg:col-7 md:col-12 sm:col-12 flex justify-content-center align-items-center container__logo">
                     <div className="px-3">
                         <img src={appImages('./lr_logo.svg')} alt="Logo Register" />
@@ -30,5 +31,6 @@ export function SectionInfoLloyds() {
                 </div>
             </ContainerResponsive>
         </Container>
+        </div>
     )
 }

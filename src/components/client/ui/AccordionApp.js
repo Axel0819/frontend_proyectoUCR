@@ -7,7 +7,7 @@ import {
 } from 'react-accessible-accordion';
 import classNames from 'classnames';
 
-export function AccordionApp({ title, description, isBlack, colorText="#494949" }) {
+export function AccordionApp({ title, description, isBlack, colorText = "#494949", children = null }) {
 
     const accordionButtonClass = classNames('accordion__button', {
         'accordion__color__black': isBlack,
@@ -26,11 +26,23 @@ export function AccordionApp({ title, description, isBlack, colorText="#494949" 
                 </AccordionItemHeading>
                 <div className="containerItemPanel">
                     <AccordionItemPanel>
-                        <p style={{
+                        {children !== null ? (
+                            children
+                        ) : (
+                            <div className="panel__text">
+                                <p style={{
+                                    color: colorText
+                                }} className="text-font-open-sans">
+                                    {description}
+                                </p>
+                            </div>
+                        )}
+
+                        {/* <p style={{
                             color: colorText 
                         }} className="text-font-open-sans">
                             {description}
-                        </p>
+                        </p> */}
                     </AccordionItemPanel>
                 </div>
             </AccordionItem>

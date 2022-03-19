@@ -4,7 +4,6 @@ import { ContainerResponsive } from '../layouts/ContainerResponsive'
 import logoBlack from '../../../assets/images/logoBlack.png'
 import { TitleSection } from './TitleSection'
 
-import { imgContrySvg } from '../../../helpers/appImages'
 import { CardCountries } from '../cards/CardCountries'
 
 export const SectionInfoCecamm = () => {

@@ -10,7 +10,7 @@ import './config/i18n' // config tranductions
 //Tareas pendientes
 //1. Crear el menu reponsive
 
-// Dimension minima de las imagenes del header 1920 x 825 
+// Dimension minima de las imagenes del header 1920 x 825
 
 ReactDOM.render(
   <StrictMode>
