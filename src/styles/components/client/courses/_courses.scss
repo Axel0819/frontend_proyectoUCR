@@ -11,8 +11,12 @@
 
 .container__courses__results {
     position: relative;
-    row-gap: 30px;
+    // row-gap: 30px;
     flex: 1;
+
+    .courses__results__cards {
+        row-gap: 50px;
+    }
 }
 
 .container__filter {
@@ -27,4 +31,56 @@
 .container__filter__body.show {
     transform: translateX(0%);
     transition: 0.6s;
+}
+
+
+.options__filter {
+    width: 350px;
+    // background-color: red;
+}
+
+
+
+.search__bar {
+    border-radius: 2px;
+    border: 1px solid $light-input;
+    height: 100%;
+    padding: 2px 2px 2px 40px;
+    transition: 0.3s;
+
+    i {
+        font-size: 25px;
+        color: $light-input;
+        transition: 0.3s;
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        input {
+            height: 100%;
+            width: 100%;
+            border-radius: 2px;
+            font-size: 18px;
+            padding-left: 5px;
+            border: none;
+            outline: none;
+            caret-color: $active;
+    
+            &::placeholder {
+                font-size: 18px;
+                font-family: 'Abel', sans-serif;
+            }
+        }
+    }
+
+    
+}
+
+.activeElement {
+    border: 1px solid $active !important;
+
+    i {
+        color: $active !important;
+    }
 }

@@ -18,7 +18,7 @@ export default function CoursesPage() {
     <CoursesState>
       <TitleSectionPage title={'Cursos'} />
       <Container>
-        <Options setOpenFilter={setOpenFilter} />
+        <Options openFilter={openFilter} setOpenFilter={setOpenFilter} />
 
         <div className={classContainer}>
           <ContainerFilter openFilter={openFilter} />

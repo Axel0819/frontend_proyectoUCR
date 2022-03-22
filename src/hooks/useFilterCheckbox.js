@@ -1,25 +1,40 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { SearchContext } from '../context/SearchContext'
-import { types } from '../types/types'
+import useGetNumbersFilters from './useGetNumbersFilters'
 
-export const useFilterCheckbox = (type) => {
-    const { searchState, dispatch } = useContext(SearchContext)
-    const objectSearch = type === types.searchSetState ? searchState.state : searchState.types
+export const useFilterCheckbox = (type, state) => {
+    const initState = JSON.stringify(state)
+    const { dispatch } = useContext(SearchContext)
+    const [checkboxData, setCheckboxData] = useState(state)
+    const { isEmpty } = useGetNumbersFilters()
 
-    const handleOnChange = (e) => {
-        const value = e.target.value
-        const checked = e.target.checked
-        if(checked) return dispatch({
-            type,
-            payload: [...objectSearch, value]
-        })
-
-        const newStateChecked = objectSearch.filter(item => item !== value)
-        dispatch({
-            type,
-            payload: [...newStateChecked]
-        });
+    const handleController = ({ target }) => {
+        const value = target.name
+        const result = checkboxData.map(item => item.name === value ? {
+            ...item,
+            checked: !item.checked
+        } : item)
+        setCheckboxData([...result])
     }
 
-    return { handleOnChange }
+    useEffect(() => { // guarda los filtros en el reducer de searchs
+        const searchData = checkboxData.filter(({ checked }) => checked === true).map(item => item.name)
+
+        dispatch({
+            type,
+            payload: searchData
+        })
+
+    }, [checkboxData, dispatch, type])
+
+    useEffect(() => {
+        const parseInitState = JSON.parse(initState)
+        // if empty, set values initials
+        if (isEmpty) {
+            setCheckboxData([...parseInitState])
+        }
+    }, [isEmpty, initState])
+
+
+    return { checkboxData, handleController }
 }

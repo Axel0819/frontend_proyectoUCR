@@ -1,16 +1,22 @@
 import { types } from '../types/types';
 
-const initState = {
-    q: [], // queryCourse
-    hours: [],
-    types: [],
-    state: []
-}
+// const initState = {
+//     q: [], // queryCourse
+//     hours: [],
+//     types: [],
+//     state: [],
+// }
 
-export const searchReducer = ( state=initState, action) => {
+export const searchReducer = (state = {}, action) => {
     const { type, payload } = action
 
     switch (type) {
+
+        case types.searchSetQ:
+            return {
+                ...state,
+                q: [...payload]
+            }
 
         case types.searchSetHours:
             return {
@@ -29,7 +35,15 @@ export const searchReducer = ( state=initState, action) => {
                 ...state,
                 types: [...payload]
             }
-    
+
+        case types.searchRemoveFilters:
+            return {
+                ...state,
+                hours: [],
+                types: [],
+                state: []
+            }
+
         default:
             return state;
     }

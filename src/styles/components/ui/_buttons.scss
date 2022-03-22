@@ -3,7 +3,6 @@
     border: none;
     color: white;
     cursor: pointer;
-    padding: 10px 20px;
 
     transition: color .3s ease;
 
@@ -11,14 +10,15 @@
         outline: none;
     }
 
-    &:hover {
-        color: darken($color: white, $amount: 12);
-    }
+    // &:hover {
+    //     color: darken($color: white, $amount: 12);
+    // }
 }
 
 .btn-primary {
     background-color: $active;
     border-radius: 5px;
+    padding: 10px 20px;
 
     &:disabled {
         background-color: lighten($color: $active, $amount: 15);
@@ -26,6 +26,32 @@
 
     &:hover {
         background-color: darken($color: $active, $amount: 15);
+        color: darken($color: white, $amount: 12);
+    }
+}
+
+.btn-filter {
+    border: 1px solid $light-input;
+    border-radius: 2px;
+    padding: 10px 20px;
+    color: rgb(59, 59, 59);
+    font-size: 18px;
+    transition: 0.3s;
+
+    i {
+        color: $light-input;
+    }
+
+    &:disabled {
+        background-color: lighten($color: $light-input, $amount: 15);
+    }
+
+    &:hover {
+        border-color: $active;
+
+        i {
+            color: $active;
+        }
     }
 }
 

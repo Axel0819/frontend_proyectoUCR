@@ -5,19 +5,23 @@
 
         $sizeLine: 8px;
 
-        @if $size-text == 60px {
-            $sizeLine: 15px;
+        @if $size-text == 50px {
+            $sizeLine: 13px;
+        }
+
+        div {
+            height: $size-text;
+            padding-bottom: 1px;
+            span {
+                width: 4px;
+                height: calc(#{$size-text} - #{$sizeLine});
+                background-color: $active;
+            }
         }
     
-        span {
-            margin-top: $sizeLine;
-            width: 4px;
-            height: calc(#{$size-text} - #{$sizeLine});
-            background-color: $active;
-        }
     
         h1 {
-            margin-left: 10px;
+            margin-left: 15px;
             font-size: $size-text;
             color: $active;
             font-weight: 400;
