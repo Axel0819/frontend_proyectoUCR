@@ -39,15 +39,11 @@ export function SectionInfoCourse({
                             <div className="flex flex-column gap-20 buy__details">
                                 <div className="details__item flex align-items-center gap-10">
                                     <i className="fa-solid fa-calendar-day"></i>
-                                    <p>Fecha de inicio: {dateInit}</p>
-                                </div>
-                                <div className="details__item align-items-center flex gap-10">
-                                    <i className="fa-solid fa-calendar-check"></i>
-                                    <p>Fecha de finalización: {dateFinally}</p>
+                                    <p>Fecha: {dateInit}</p>
                                 </div>
                                 <div className="details__item align-items-center flex gap-10">
                                     <i className="fa-solid fa-stopwatch"></i>
-                                    <p>Horas totales: {hours}h</p>
+                                    <p>Horas totales: {hours}   h</p>
                                 </div>
                             </div>
                         </div>

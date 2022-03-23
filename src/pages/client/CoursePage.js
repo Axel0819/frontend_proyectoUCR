@@ -8,8 +8,6 @@ import { testimomials } from '../../data/testimonials';
 export function CoursePage() {
     const { id } = useParams()
 
-    console.log(id);
-
     const titleCourse = "Primeros Auxilios Básicos" 
 
     return (
@@ -18,8 +16,7 @@ export function CoursePage() {
                 name={titleCourse} 
                 omi={"1.20"} 
                 price={25000}
-                dateInit={"Lunes 10 de marzo del 2022"}
-                dateFinally={"Lunes 01 de julio del 2022"}
+                dateInit={"Lunes 10 y martes 11 de enero del 2022"}
                 hours={16}
             />
 
