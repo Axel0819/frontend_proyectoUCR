@@ -24,11 +24,18 @@ export function CoursesState({ children }) {
 
     useEffect(() => { // se procede a buscar la informacion en base a las querys establecidas
         if (!location.search) return
+        //se envia el state
 
         const busqueda = queryString.parse(location.search)
 
         console.log('Se procede a realizar la busqueda');
-        console.log(busqueda);
+        console.log(searchState);
+
+        // await fetch('url', {
+        //     method: 'POST',
+        //     body: JSON.stringify(busqueda)
+        // })
+
     }, [location.search, searchState])
 
     return (
