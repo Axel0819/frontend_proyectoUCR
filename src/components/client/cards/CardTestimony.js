@@ -1,7 +1,6 @@
 import { imgTestimonials } from "../../../helpers/appImages"
 
 export function CardTestimony({name, img, description, subtitleCard}) {
-    console.log(subtitleCard);
     return (
         <div className="card__testimony">
             <div className="card__testimony__img flex justify-content-center">

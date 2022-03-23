@@ -1,5 +1,6 @@
 import { Suspense, lazy, useState } from 'react'
 import { Outlet } from 'react-router-dom'
+import { modalEnum } from '../../../enum/modalEnum'
 import ContactModal from '../modals/ContactModal'
 // import { LoaderNavbar } from './loaders/LoaderNavbar'
 
@@ -7,30 +8,35 @@ const Navbar = lazy(() => import('../ui/Navbar'))
 
 export default function ClientLayout() {
   const [modalIsOpen , setModalIsOpen ] = useState(false)
-  const [modalIsContact, setIsContact] = useState(true) // abre modal de contacto si es true
-
-  const openModal = () => {
-    setModalIsOpen(true)
-  }
+  const [typeModal, setTypeModal] = useState(0)
 
   const closeModal = () => {
     setModalIsOpen(false)
   }
 
-  const openModalContact = () => {
-    openModal()
-    setIsContact(true)
+  const openModalContact = () => {   
+    setModalIsOpen(true)
+    setTypeModal(modalEnum.contact)
   }
 
   const openModalTranslate = () => {
-    openModal()
-    setIsContact(false)
+    setModalIsOpen(true)
+    setTypeModal(modalEnum.translate)
+  }
+
+  const openModalSearch = () => {
+    setModalIsOpen(true)
+    setTypeModal(modalEnum.search)
   }
 
   return (
     <div className="grid__container">
       <Suspense fallback={ <span>Cargando textos...</span> }>
-        <Navbar openModalContact={openModalContact} openModalTranslate={openModalTranslate} />
+        <Navbar 
+          openModalContact={openModalContact} 
+          openModalTranslate={openModalTranslate}
+          openModalSearch={openModalSearch} 
+        />
       </Suspense>
 
       <div className="main">
@@ -42,10 +48,16 @@ export default function ClientLayout() {
       </footer>
 
       <ContactModal modalIsOpen={modalIsOpen} closeModal={closeModal}>
-        { modalIsContact ? (
-          <h1>Soy el contacto</h1>
-        ):(
-          <h1>Soy el translate</h1>
+        { typeModal === modalEnum.contact && (
+          <h1>Soy el modal del contacto</h1>
+        ) }
+
+        { typeModal === modalEnum.translate && (
+          <h1>Soy el modal del translate</h1>
+        ) }
+
+        { typeModal === modalEnum.search && (
+          <h1>Soy el modal del search</h1>
         ) }
       </ContactModal>
     </div>
