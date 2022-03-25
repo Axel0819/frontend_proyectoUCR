@@ -7,9 +7,9 @@ export function Options({ openFilter, setOpenFilter }) {
     const { dispatch } = useContext(SearchContext)
 
     return (
-        <div className="my-4 grid">
+        <div className="my-4 grid grid-nogutter container__options__courses">
 
-            <div className="col-fixed flex justify-content-around options__filter">
+            <div className="col-fixed flex justify-content-around options__filter p-2">
                 <OptionsFilter openFilter={openFilter} setOpenFilter={setOpenFilter} dispatch={dispatch} />
             </div>
 

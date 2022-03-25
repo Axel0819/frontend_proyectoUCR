@@ -1,20 +1,20 @@
 import { Suspense, lazy, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { modalEnum } from '../../../enum/modalEnum'
-import ContactModal from '../modals/ContactModal'
-// import { LoaderNavbar } from './loaders/LoaderNavbar'
+import { ContactModal } from '../modals/ContactModal'
+import { ModalApp } from '../ui/ModalApp'
 
 const Navbar = lazy(() => import('../ui/Navbar'))
 
 export default function ClientLayout() {
-  const [modalIsOpen , setModalIsOpen ] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   const [typeModal, setTypeModal] = useState(0)
 
   const closeModal = () => {
     setModalIsOpen(false)
   }
 
-  const openModalContact = () => {   
+  const openModalContact = () => {
     setModalIsOpen(true)
     setTypeModal(modalEnum.contact)
   }
@@ -31,11 +31,11 @@ export default function ClientLayout() {
 
   return (
     <div className="grid__container">
-      <Suspense fallback={ <span>Cargando textos...</span> }>
-        <Navbar 
-          openModalContact={openModalContact} 
+      <Suspense fallback={<span>Cargando textos...</span>}>
+        <Navbar
+          openModalContact={openModalContact}
           openModalTranslate={openModalTranslate}
-          openModalSearch={openModalSearch} 
+          openModalSearch={openModalSearch}
         />
       </Suspense>
 
@@ -47,19 +47,19 @@ export default function ClientLayout() {
         <h1>Footer</h1>
       </footer>
 
-      <ContactModal modalIsOpen={modalIsOpen} closeModal={closeModal}>
-        { typeModal === modalEnum.contact && (
-          <h1>Soy el modal del contacto</h1>
-        ) }
+      <ModalApp modalIsOpen={modalIsOpen} closeModal={closeModal}>
+        {typeModal === modalEnum.contact && (
+          <ContactModal closeModal={closeModal}/>
+        )}
 
-        { typeModal === modalEnum.translate && (
+        {typeModal === modalEnum.translate && (
           <h1>Soy el modal del translate</h1>
-        ) }
+        )}
 
-        { typeModal === modalEnum.search && (
+        {typeModal === modalEnum.search && (
           <h1>Soy el modal del search</h1>
-        ) }
-      </ContactModal>
+        )}
+      </ModalApp>
     </div>
   )
 }

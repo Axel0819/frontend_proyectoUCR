@@ -98,6 +98,18 @@ html {
     right: 0;
     top: 0;
     position: fixed;
+
+    .container__modal {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-close-modal {
+        position: absolute;
+        top: -1.50rem;
+        right: -1.50rem;
+    }
 }
 
 .ReactModalPortal .ReactModal__Overlay--after-open {
@@ -110,13 +122,21 @@ html {
 
 .modal {
     background: white;
-    border-radius: 5px;
+    border-radius: 1rem;
     color: rgb(51, 51, 51);
     display: inline;
-    max-height: 620px;
-    max-width: 500px;
+    // max-height: 620px;
     outline: none;
     padding: 10px;
+    max-width: 500px;
+    
+    @media (max-width: 576px) {
+        max-width: 350px;
+    }
+
+    @media (max-width: 375px) {
+        max-width: 300px;
+    }
 }
 
 a {

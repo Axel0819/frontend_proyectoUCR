@@ -9,6 +9,7 @@ import { CoursesState } from '../../components/client/courses/CoursesState'
 
 export default function CoursesPage() {
   const [openFilter, setOpenFilter] = useState(false)
+  const [ heightToFilter, setHeightToFilter ] = useState(0)
 
   const classContainer = classNames('flex', 'container__courses', {
     'filterOpen': !openFilter
@@ -21,8 +22,8 @@ export default function CoursesPage() {
         <Options openFilter={openFilter} setOpenFilter={setOpenFilter} />
 
         <div className={classContainer}>
-          <ContainerFilter openFilter={openFilter} />
-          <ContainerCourses />
+          <ContainerFilter openFilter={openFilter} setHeightToFilter={setHeightToFilter}/>
+          <ContainerCourses openFilter={openFilter} heightToFilter={heightToFilter} />
         </div>
 
       </Container>
