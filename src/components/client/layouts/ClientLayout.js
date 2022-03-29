@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { modalEnum } from '../../../enum/modalEnum'
 import { ContactModal } from '../modals/ContactModal'
 import { ModalApp } from '../ui/ModalApp'
+import { TranslateModal } from '../modals/TranslateModal'
 
 const Navbar = lazy(() => import('../ui/Navbar'))
 
@@ -53,7 +54,7 @@ export default function ClientLayout() {
         )}
 
         {typeModal === modalEnum.translate && (
-          <h1>Soy el modal del translate</h1>
+          <TranslateModal />
         )}
 
         {typeModal === modalEnum.search && (

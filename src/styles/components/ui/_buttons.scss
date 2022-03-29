@@ -4,7 +4,7 @@
     color: white;
     cursor: pointer;
 
-    transition: color .3s ease;
+    transition: all .3s ease;
 
     &:focus {
         outline: none;
@@ -90,6 +90,22 @@
     &:hover {
         background-color: darken($color: $light, $amount: 10);
         color: darken($color: #505050, $amount: 10);
+    }
+}
+
+.btn-lenguaje {
+    background-color: $light-input;
+    border: 1px solid $light-input;
+    border-radius: 5px;
+    padding: 20px 50px;
+    color: $secondary;
+
+    @media (max-width: 576px){
+        padding: 10px 20px;
+    }
+
+    &:hover {
+        border: 1px solid $active;
     }
 }
 
