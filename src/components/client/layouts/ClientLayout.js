@@ -4,6 +4,7 @@ import { modalEnum } from '../../../enum/modalEnum'
 import { ContactModal } from '../modals/ContactModal'
 import { ModalApp } from '../ui/ModalApp'
 import { TranslateModal } from '../modals/TranslateModal'
+import { SearchModal } from '../modals/SearchModal'
 
 const Navbar = lazy(() => import('../ui/Navbar'))
 
@@ -58,7 +59,7 @@ export default function ClientLayout() {
         )}
 
         {typeModal === modalEnum.search && (
-          <h1>Soy el modal del search</h1>
+          <SearchModal />
         )}
       </ModalApp>
     </div>

@@ -41,7 +41,7 @@ export function OptionsSearch({ dispatch }) {
 
     return (
         <div className={classSearchContainer}>
-            <form id="form-search" onSubmit={handleOnSubmit}>
+            <form className="container__search" id="form-search" onSubmit={handleOnSubmit}>
                 <input
                     onFocus={handleFocus}
                     onBlur={handleBlur}
