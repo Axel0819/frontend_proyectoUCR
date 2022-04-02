@@ -1,0 +1,13 @@
+.item__query {
+    cursor: pointer;
+    color: $secondary;
+
+    &:hover {
+        color: $active;
+    }
+
+    div {
+        background-color: $light;
+        border-radius: 2px;
+    }
+}

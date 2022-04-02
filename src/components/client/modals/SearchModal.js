@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 import debounce from 'lodash.debounce'
 import { useActiveElement } from '../../../hooks/useActiveElement';
+import { ItemResultQuery } from './ItemResultQuery';
 
-export function SearchModal() {
+export function SearchModal({closeModal}) {
 
     const { active, handleFocus, handleBlur } = useActiveElement()
 
@@ -12,7 +13,7 @@ export function SearchModal() {
 
     const handleChange = (e) => {
         const value = e?.target?.value
-        if(!value) return 
+        if (!value) return
         console.log(value);
 
         // Aqui se realiza la busqueda
@@ -24,37 +25,38 @@ export function SearchModal() {
     const debounceOnChange = debounce(handleChange, 500)
 
     return (
-
-        <div>
-
-        <div style={{
-            height: '45px'
-        }}>
-            <div className={classSearchContainer}>
-                <div className="container__search">
-                    <input
-                        onFocus={handleFocus}
-                        onBlur={handleBlur}
-                        onChange={debounceOnChange}
-                        type="text"
-                        placeholder="Buscar..."
-                        autoComplete="off"
-                    />
+        <div className="my-4">
+            <div style={{
+                height: '45px'
+            }}>
+                <div className={classSearchContainer}>
+                    <div className="container__search">
+                        <input
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                            onChange={debounceOnChange}
+                            type="text"
+                            placeholder="Buscar..."
+                            autoComplete="off"
+                        />
+                    </div>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <i className="fa-solid fa-magnifying-glass"></i>
             </div>
-        </div>
 
-        <div style={{width: '100%'}}>
-            <ul>
-                <li>Results</li>
-                <li>Results</li>
-                <li>Results</li>
-                <li>Results</li>
-                <li>Results</li>
-            </ul>
-        </div>
-            
+            <div className="mt-3">
+                <div className="flex flex-column gap-20">
+                    {
+                        [1, 2, 3, 4].map(item => (
+                            <ItemResultQuery closeModal={closeModal} key={item} />
+                        ))
+                    }
+                </div>
+
+
+
+            </div>
+
         </div>
     )
 }

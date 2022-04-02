@@ -1,8 +1,11 @@
+import { memo } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { InputForm } from './InputForm';   
 
-export function ContactModal({closeModal}) {
+export const ContactModal = memo(({closeModal}) => {
+
+    // Mejorar el rendimiento de este componente
 
     const formik = useFormik({
         initialValues: {
@@ -65,4 +68,4 @@ export function ContactModal({closeModal}) {
             </form>
         </div>
     )
-}
+})

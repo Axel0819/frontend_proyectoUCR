@@ -7,7 +7,6 @@ import { SocialMedia } from './SocialMedia';
 export const Header = () => {
     return(
         <header className="home__header mb-3">
-        
         <div className="home__header__title">
           <h6 className="text-font-abel"> CECAMM </h6>
           <p className="text-font-open-sans">

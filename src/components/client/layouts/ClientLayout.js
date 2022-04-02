@@ -59,7 +59,7 @@ export default function ClientLayout() {
         )}
 
         {typeModal === modalEnum.search && (
-          <SearchModal />
+          <SearchModal closeModal={closeModal}/>
         )}
       </ModalApp>
     </div>
