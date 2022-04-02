@@ -1,11 +1,8 @@
-import { memo } from 'react'
-import { useFormik } from 'formik'
+import { useFormik, FormikProvider } from 'formik'
 import * as yup from 'yup'
-import { InputForm } from './InputForm';   
+import { InputForm } from './InputForm';
 
-export const ContactModal = memo(({closeModal}) => {
-
-    // Mejorar el rendimiento de este componente
+export const ContactModal = ({ closeModal }) => {
 
     const formik = useFormik({
         initialValues: {
@@ -30,42 +27,44 @@ export const ContactModal = memo(({closeModal}) => {
     })
 
     return (
-        <div className="container__modal__contact">
-            <p className="modal__contact__title text-font-abel">!Contactenos!</p>
-            <hr className="my-4" />
+        <FormikProvider value={formik}>
+            <div className="container__modal__contact">
+                <p className="modal__contact__title text-font-abel">¡Contactenos!</p>
+                <hr className="my-4" />
 
-            <form onSubmit={formik.handleSubmit} autoComplete="off">
+                <form onSubmit={formik.handleSubmit} autoComplete="off">
 
-                <div className="flex flex-column gap-20">
-                    <div className="flex gap-20">
-                        <InputForm name="name" formik={formik} />
-                        <InputForm name="firstName" formik={formik} />
-                        <InputForm name="lastName" formik={formik} />
-                    </div>
-
-                    <div>
-                        <InputForm name="email" formik={formik} />
-                    </div>
-
-                    <div>
-                        <InputForm name="phone" formik={formik} />
-                    </div>
-
-                    <div>
-                        <InputForm name="message" formik={formik} multiline rows={6} />
-                    </div>
-
-                    <div className="flex justify-content-end">
+                    <div className="flex flex-column gap-20">
                         <div className="flex gap-20">
-                            <button className="btn btn-cancel" type="button" onClick={closeModal}>Cancelar</button>
-                            <button className="btn btn-primary" type="submit" onClick={formik.handleSubmit}>Enviar</button>
+                            <InputForm name="name" formik={formik} />
+                            <InputForm name="firstName" formik={formik}/>
+                            <InputForm name="lastName" formik={formik} />
                         </div>
+
+                        <div>
+                            <InputForm name="email" formik={formik} />
+                        </div>
+
+                        <div>
+                            <InputForm name="phone" formik={formik} />
+                        </div>
+
+                        <div>
+                            <InputForm name="message" formik={formik} multiline rows={6} />
+                        </div>
+
+                        <div className="flex justify-content-end">
+                            <div className="flex gap-20">
+                                <button className="btn btn-cancel" type="button" onClick={closeModal}>Cancelar</button>
+                                <button className="btn btn-primary" type="submit" onClick={formik.handleSubmit}>Enviar</button>
+                            </div>
+                        </div>
+
                     </div>
 
-                </div>
 
-
-            </form>
-        </div>
+                </form>
+            </div>
+            </FormikProvider>
     )
-})
+}
