@@ -1,8 +1,8 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
-import { appImages } from '../../../helpers/appImages'
 import { Container } from '../layouts/Container'
+import { LogoCecamm } from './LogoCecamm'
 
 export default function Navbar({ openModalContact, openModalTranslate, openModalSearch }) {
     const { t, i18n } = useTranslation(['navbar'])
@@ -16,11 +16,7 @@ export default function Navbar({ openModalContact, openModalTranslate, openModal
             <Container>
                 <div className="flex align-items-center justify-content-between flex-wrap">
 
-                    <div className="navbar__logo">
-                        <Link to="/">
-                            <img width="100%" src={appImages('./logo.png')} alt="Logo CECAMM" />
-                        </Link>
-                    </div>
+                   <LogoCecamm />
 
                     <div className="flex justify-content-between flex-wrap gap-40 navbar__list">
                         <Link to="/">Inicio</Link>

@@ -5,6 +5,7 @@ import { ContactModal } from '../modals/ContactModal'
 import { ModalApp } from '../ui/ModalApp'
 import { TranslateModal } from '../modals/TranslateModal'
 import { SearchModal } from '../modals/SearchModal'
+import { Footer } from '../ui/Footer'
 
 const Navbar = lazy(() => import('../ui/Navbar'))
 
@@ -45,9 +46,7 @@ export default function ClientLayout() {
         <Outlet />
       </div>
 
-      <footer className="footer">
-        <h1>Footer</h1>
-      </footer>
+      <Footer />
 
       <ModalApp modalIsOpen={modalIsOpen} closeModal={closeModal}>
         {typeModal === modalEnum.contact && (

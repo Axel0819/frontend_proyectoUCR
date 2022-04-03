@@ -1,0 +1,52 @@
+import { Link } from "react-router-dom";
+import { SocialMedia } from "../home/SocialMedia";
+import { Container } from "../layouts/Container";
+import { LogoCecamm } from "./LogoCecamm";
+
+export function Footer() {
+    return (
+        <footer className="footer text-font-open-sans">
+            <Container fullHeight={true}>
+                <div style={{ height: '100%' }} className="flex flex-column gap-80 justify-content-between pt-6 pb-4 px-3">
+                    <div className="flex flex-wrap justify-content-start gap-80">
+                        <div style={{width: '150px'}} className="flex flex-column gap-10">
+                            <LogoCecamm />
+                            <p className="footer__info text-center">Comprometidos con la Capacitación del Talento Humano para la Marina Mercante</p>
+                        </div>
+                        <div  className="flex flex-column gap-10">
+                            <p className="footer__title">Explorar</p>
+                            <Link to="/">Inicio</Link>
+                            <Link to="aboutus">¿Quienes Somos?</Link>
+                            <Link to="courses">Cursos</Link>
+                            <Link to="prices">Precios</Link>
+                        </div>
+                        <div style={{width: '150px'}} className="flex flex-column gap-10">
+                            <p className="footer__title">Visita</p>
+                            <p className="footer__info">Costa Rica, Limon. Universidad de Costa Rica, Sede del Caribe</p>
+                        </div>
+
+                        <div className="flex flex-column gap-10">
+                            <p className="footer__title">Teléfonos</p>
+                            <p className="footer__info">2511-7349</p>
+                        </div>
+                        <div className="flex flex-column gap-10">
+                            <p className="footer__title">Correo</p>
+                            <p className="footer__info">cecamm.sedecaribe@ucr.ac.cr</p>
+                        </div>
+
+                        <div className="flex flex-column gap-10">
+                            <p className="footer__title">Legal</p>
+                            <p className="footer__info">Términos y condiciones</p>
+                            <p className="footer__info">Declaración de privacidad</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap justify-content-between align-items-end gap-20">
+                        <small className="text-color-white">&copy; 2022 CECAMM. Aviso legal. Derechos reservados.</small>
+                        <SocialMedia isLeft={false} />
+                    </div>
+                </div>
+            </Container>
+        </footer>
+    )
+}

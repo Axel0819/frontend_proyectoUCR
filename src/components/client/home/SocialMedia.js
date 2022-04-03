@@ -7,8 +7,7 @@ export const SocialMedia = ({isLeft}) => {
     const classSocialMedia = classNames(
         'social__media',
         {
-        'social__media__left': isLeft,
-        'social__media__right': !isLeft
+        'social__media__left': isLeft
     })
 
     return(

@@ -1,4 +1,19 @@
 .footer {
     grid-area: footer;
-    background-color: aqua;
+    background-color: $secondary;
+
+    .footer__title {
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .footer__info, a {
+        color: #CBCBCB;
+        font-size: 14px;
+    }
+
+    small {
+        color: white;
+    }
 }
