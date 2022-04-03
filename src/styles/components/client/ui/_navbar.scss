@@ -1,3 +1,5 @@
+$breakpointMenu: 992px;
+
 .navbar {
     // position: fixed;
     // width: 100%;
@@ -8,6 +10,60 @@
     background-color: $primary;
     // z-index: 2;
     // font-family: 'Open Sans', sans-serif;
+
+    .navbar__icon__bars {
+        display: none !important;
+    }
+
+    @media (max-width: $breakpointMenu) {
+        padding-left: 16px;
+        padding-right: 35px;
+
+        .navbar__icon__bars {
+            display: flex !important;
+        }
+
+        .navbar__list {
+            position: fixed;
+            top: calc(#{$navbar-height} - 1px);
+            background-color: $primary;
+            left: 0;
+            z-index: 3;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: start !important;
+            align-items: center;
+            transition: .3s;
+            padding-top: 110px;
+            transform: translateX(-100%);
+            
+            &.menuIsActive {
+                transform: translateX(0);
+            }
+        }
+
+        .navbar__icons {
+            position: fixed;
+            top: calc(#{$navbar-height} + 51px);
+            z-index: 3;
+            width: 100%;
+            left: 0;
+            justify-content: center !important;
+            transition: 0.3s;
+            transform: translate(100%);
+
+            &.menuIsActive {
+                transform: translateX(0);
+            }
+        }
+
+        .navbar__icon__bars {    
+             i {
+                font-size: 35px;
+             }
+        }
+    }
 }
 
 .navbar__logo {

@@ -26,7 +26,7 @@ export const Carousel = ({ children, options = { loop: true }, play = true, proo
   
 
   return (
-    <div className="embla" ref={proof ? emblaRef : null}>
+    <div className="embla" ref={(proof) ? emblaRef : null}>
       <div className="embla__container">
         {children}
       </div>

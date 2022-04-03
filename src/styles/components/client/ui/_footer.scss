@@ -16,4 +16,10 @@
     small {
         color: white;
     }
+
+    @media (max-width: 800px) {
+        .footer__social {
+            justify-content: center !important;
+        }
+    }
 }

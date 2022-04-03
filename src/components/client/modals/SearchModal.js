@@ -13,7 +13,7 @@ export function SearchModal({ closeModal }) {
         <div className="my-4">
             <SearchBarDebounce handleSearch={handleSearch} />
 
-            {/* <div className="mt-3">
+            <div className="mt-3">
                 <div className="flex flex-column gap-20">
                     {
                         [1, 2, 3, 4].map(item => (
@@ -21,7 +21,7 @@ export function SearchModal({ closeModal }) {
                         ))
                     }
                 </div>
-            </div> */}
+            </div>
 
         </div>
     )

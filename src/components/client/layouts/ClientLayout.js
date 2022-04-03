@@ -1,5 +1,5 @@
-import { Suspense, lazy, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Suspense, lazy, useState, useContext, useEffect } from 'react'
+import { Outlet, UNSAFE_NavigationContext } from 'react-router-dom'
 import { modalEnum } from '../../../enum/modalEnum'
 import { ContactModal } from '../modals/ContactModal'
 import { ModalApp } from '../ui/ModalApp'
@@ -10,8 +10,19 @@ import { Footer } from '../ui/Footer'
 const Navbar = lazy(() => import('../ui/Navbar'))
 
 export default function ClientLayout() {
+  const navigation = useContext(UNSAFE_NavigationContext).navigator
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [typeModal, setTypeModal] = useState(0)
+
+  useEffect(() => {
+    if(navigation){
+      navigation.listen(() => {
+        setMenuIsOpen(false)
+      })
+    }
+  }, [navigation])
 
   const closeModal = () => {
     setModalIsOpen(false)
@@ -39,18 +50,24 @@ export default function ClientLayout() {
           openModalContact={openModalContact}
           openModalTranslate={openModalTranslate}
           openModalSearch={openModalSearch}
+          menuIsOpen={menuIsOpen}
+          setMenuIsOpen={setMenuIsOpen}
         />
       </Suspense>
 
-      <div className="main">
-        <Outlet />
-      </div>
+      {!menuIsOpen && (
+        <>
+          <div className="main">
+            <Outlet />
+          </div>
 
-      <Footer />
+          <Footer menuIsOpen={menuIsOpen} />
+        </>
+      )}
 
       <ModalApp modalIsOpen={modalIsOpen} closeModal={closeModal}>
         {typeModal === modalEnum.contact && (
-          <ContactModal closeModal={closeModal}/>
+          <ContactModal closeModal={closeModal} />
         )}
 
         {typeModal === modalEnum.translate && (
@@ -58,7 +75,7 @@ export default function ClientLayout() {
         )}
 
         {typeModal === modalEnum.search && (
-          <SearchModal closeModal={closeModal}/>
+          <SearchModal closeModal={closeModal} />
         )}
       </ModalApp>
     </div>

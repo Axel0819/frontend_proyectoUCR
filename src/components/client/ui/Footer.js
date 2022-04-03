@@ -1,9 +1,11 @@
+import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { SocialMedia } from "../home/SocialMedia";
 import { Container } from "../layouts/Container";
 import { LogoCecamm } from "./LogoCecamm";
 
 export function Footer() {
+    
     return (
         <footer className="footer text-font-open-sans">
             <Container fullHeight={true}>
@@ -41,7 +43,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap justify-content-between align-items-end gap-20">
+                    <div className="flex flex-wrap justify-content-between align-items-end gap-20 footer__social">
                         <small className="text-color-white">&copy; 2022 CECAMM. Aviso legal. Derechos reservados.</small>
                         <SocialMedia isLeft={false} />
                     </div>
