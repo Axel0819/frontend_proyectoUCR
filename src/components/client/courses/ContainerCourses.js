@@ -10,11 +10,11 @@ import { TitleSection } from "../home/TitleSection";
 export function ContainerCourses({ openFilter, heightToFilter }) {
     const location = useLocation()
 
-    const { q = '' } = queryString.parse(location.search)
+    const filters = queryString.parse(location.search)
 
     const { isEmpty } = useGetNumbersFilters()
 
-    const titleSearch = !q ? 'Cursos abiertos' : `Resultados para "${q}"`
+    const titleSearch = !filters.q ? 'Cursos abiertos' : `Resultados para "${filters.q}"`
 
     const proof = classNames('container__courses__results', {
         'filterIsOpenMovil': openFilter && window.innerWidth <= 576
@@ -24,15 +24,23 @@ export function ContainerCourses({ openFilter, heightToFilter }) {
     return (
         <div className={proof}>
             {
-                (isEmpty || !!q) && (
+                (isEmpty || !!filters.q) && (
                     <div className="mb-4">
                         <TitleSection title={titleSearch} />
                     </div>
                 )
             }
 
+            {
+                (!isEmpty && !filters.q) && (
+                    <div className="mb-4">
+                        <TitleSection title={'Filtros aplicados'} />
+                    </div>
+                )
+            }
+
             <div style={{
-                height: (openFilter && window.innerWidth <= 576) ? `${heightToFilter}px` : 'auto' 
+                height: (openFilter && window.innerWidth <= 576) ? `${heightToFilter}px` : 'auto'
             }}
                 className="flex flex-wrap justify-content-around courses__results__cards mx-3">
                 <CardCourse />
