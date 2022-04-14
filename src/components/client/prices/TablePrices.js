@@ -1,28 +1,109 @@
 import * as React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableFooter, TablePagination, TableRow, Paper, TableHead } from '@mui/material'
+import { Table, TableBody, TableCell, TableContainer, TableFooter, TablePagination, TableRow, Paper, TableHead, TableSortLabel, Toolbar, Typography } from '@mui/material'
 import { TablePaginationActions } from './TablePaginationActions';
-
-function createData(name, calories, fat) {
-    return { name, calories, fat };
-}
+import { makeStyles } from '@mui/styles';
 
 const rows = [
-    createData('Cupcake', 305, 3.7),
-    createData('Donut', 452, 25.0),
-    createData('Eclair', 262, 16.0),
-    createData('Frozen yoghurt', 159, 6.0),
-    createData('Gingerbread', 356, 16.0),
-    createData('Honeycomb', 408, 3.2),
-    createData('Ice cream sandwich', 237, 9.0),
-    createData('Jelly Bean', 375, 0.0),
-    createData('KitKat', 518, 26.0),
-    createData('Lollipop', 392, 0.2),
-    createData('Marshmallow', 318, 0),
-    createData('Nougat', 360, 19.0),
-    createData('Oreo', 437, 18.0),
-].sort((a, b) => (a.calories < b.calories ? -1 : 1));
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+    {
+        name: 'Primeros auxilios',
+        omi: '1.20',
+        cod: '589',
+        duration: '18 horas',
+        PricesN: '450.00',
+        PricesE: '500.00'
+    },
+]
+
+const useStyles = makeStyles((theme) => {
+    return {
+        table: {
+            minWidth: 500,
+            "& .MuiTableCell-head": {
+                fontWeight: 600,
+                // color: 'red'
+            }
+        },
+        title: {
+            "& #tableTitle": {
+                fontWeight: 600,
+            }
+        }
+    };
+});
+
+const EnhancedTableToolbar = () => {
+    const classes = useStyles()
+    return (
+        <Toolbar
+            className={classes.title}
+            sx={{
+                pl: { sm: 2 },
+                pr: { xs: 1, sm: 1 }
+            }}
+        >
+            <Typography
+                sx={{ flex: '1 1 100%' }}
+                variant="h6"
+                id="tableTitle"
+                component="div"
+            >
+                Información de los cursos
+            </Typography>
+        </Toolbar>
+    );
+};
+
 
 export function TablePrices() {
+    const classes = useStyles()
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -39,61 +120,80 @@ export function TablePrices() {
         setPage(0);
     };
 
-    return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Product</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {(rowsPerPage > 0
-                        ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                        : rows
-                    ).map((row) => (
-                        <TableRow key={row.name}>
-                            <TableCell component="th" scope="row">
-                                {row.name}
-                            </TableCell>
-                            <TableCell style={{ width: 160 }} align="right">
-                                {row.calories}
-                            </TableCell>
-                            <TableCell style={{ width: 160 }} align="right">
-                                {row.fat}
-                            </TableCell>
-                        </TableRow>
-                    ))}
+    // rows per page
 
-                    {emptyRows > 0 && (
-                        <TableRow style={{ height: 53 * emptyRows }}>
-                            <TableCell colSpan={6} />
+    return (
+        <Paper sx={{ width: '100%', mb: 2 }}>
+            <EnhancedTableToolbar />
+            <TableContainer>
+                <Table className={classes.table} aria-label="custom pagination table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>
+                                Curso
+                            </TableCell>
+                            <TableCell>Código OMI</TableCell>
+                            <TableCell>Número identificativo</TableCell>
+                            <TableCell>Duración en horas</TableCell>
+                            <TableCell>Precios para ciudadanos nacionales</TableCell>
+                            <TableCell>Precios para ciudadanos extranjeros</TableCell>
                         </TableRow>
-                    )}
-                </TableBody>
-                <TableFooter>
-                    <TableRow>
-                        <TablePagination
-                            rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                            colSpan={3}
-                            count={rows.length}
-                            rowsPerPage={rowsPerPage}
-                            page={page}
-                            SelectProps={{
-                                inputProps: {
-                                    'aria-label': 'rows per page',
-                                },
-                                native: true,
-                            }}
-                            onPageChange={handleChangePage}
-                            onRowsPerPageChange={handleChangeRowsPerPage}
-                            ActionsComponent={TablePaginationActions}
-                        />
-                    </TableRow>
-                </TableFooter>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        {(rowsPerPage > 0
+                            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            : rows
+                        ).map((row, i) => (
+                            <TableRow key={row.cod + i}>
+                                <TableCell component="th" scope="row">
+                                    {row.name}
+                                </TableCell>
+                                <TableCell>
+                                    {row.omi}
+                                </TableCell>
+                                <TableCell>
+                                    {row.cod}
+                                </TableCell>
+                                <TableCell>
+                                    {row.duration}
+                                </TableCell>
+                                <TableCell>
+                                    {row.PricesN}
+                                </TableCell>
+                                <TableCell>
+                                    {row.PricesE}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+
+                        {emptyRows > 0 && (
+                            <TableRow style={{ height: 53 * emptyRows }}>
+                                <TableCell colSpan={6} />
+                            </TableRow>
+                        )}
+                    </TableBody>
+                    <TableFooter>
+                        <TableRow>
+                            <TablePagination
+                                rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+                                colSpan={3}
+                                count={rows.length}
+                                rowsPerPage={rowsPerPage}
+                                page={page}
+                                SelectProps={{
+                                    inputProps: {
+                                        'aria-label': 'rows per page',
+                                    },
+                                    native: true,
+                                }}
+                                onPageChange={handleChangePage}
+                                onRowsPerPageChange={handleChangeRowsPerPage}
+                                ActionsComponent={TablePaginationActions}
+                            />
+                        </TableRow>
+                    </TableFooter>
+                </Table>
+            </TableContainer>
+        </Paper>
     );
 }
