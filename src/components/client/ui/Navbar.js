@@ -25,7 +25,12 @@ export default function Navbar({ openModalContact, openModalTranslate, openModal
                             'menuIsActive': menuIsOpen
                         })
                     }>
-                        <Link to="/">Inicio</Link>
+                        <NavLink
+                            className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
+                            to="/"
+                        >
+                            Inicio
+                        </NavLink>
 
                         <NavLink
                             className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
