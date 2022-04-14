@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import { dataCulture } from '../../../data/dataCulture'
 import { CardCulture } from '../cards/CardCulture'
 import { Container } from '../layouts/Container'
@@ -6,6 +6,17 @@ import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel'
 
 export function SectionInfoCulture() {
+    const cardRef = useRef([])
+
+    useLayoutEffect(() => {
+        const element = cardRef.current.map(e => e.clientHeight)
+        const maxHeight = Math.max(...element)
+
+        cardRef.current.forEach(e => {
+            e.style.height = `${maxHeight}px`
+        })
+    }, [])
+
     return (
         <div className="my-6">
             <Container>
@@ -21,7 +32,9 @@ export function SectionInfoCulture() {
                                 {
                                     dataCulture.map((data, i) => (
                                         <ItemCarousel key={data.title + i} fullHeight={false}>
-                                            <CardCulture {...data} />
+                                            <div ref={el => cardRef.current[i] = el}>
+                                                <CardCulture {...data} />
+                                            </div>
                                         </ItemCarousel>
                                     ))
                                 }
@@ -31,7 +44,9 @@ export function SectionInfoCulture() {
                                 {
                                     dataCulture.map((data, i) => (
                                         <div key={data.title + i} className="col-4">
-                                            <CardCulture {...data} />
+                                            <div ref={el => cardRef.current[i] = el}>
+                                                <CardCulture {...data} />
+                                            </div>
                                         </div>
                                     ))
                                 }
