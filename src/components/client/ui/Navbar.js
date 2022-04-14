@@ -48,7 +48,8 @@ export default function Navbar({ openModalContact, openModalTranslate, openModal
                             className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
                             to="prices"
                         >
-                            Precios
+                            {/* Precios */}
+                            { t('proof') }
                         </NavLink>
 
                     </div>
