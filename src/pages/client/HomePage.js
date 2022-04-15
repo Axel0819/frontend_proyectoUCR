@@ -7,10 +7,18 @@ import { SectionInfoEquip } from '../../components/client/home/SectionInfoEquip'
 import { SectionInfoTestim } from '../../components/client/home/SectionInfoTestim';
 
 import { testimomials  } from '../../data/testimonials'
+import ScrollReveal from 'scrollreveal'
+import { useEffect } from 'react';
 
 export default function HomePage() {
-  //estudiar la propiedad transform y translate de css
+  useEffect(() => {
+    const elementsReveal = ['.sectionInfoCecamm', '.divider', '.sectionInfoLloyds', '.sectionInfoCourses', '.sectionInfoEquip', '.sectionInfoTestim']
 
+    elementsReveal.forEach(e => {
+      ScrollReveal().reveal(e, {delay: 500, reset: true})
+    })
+    ScrollReveal().reveal('.divider', {delay: 250, reset: true})
+  }, [])
   return (
     <>
       <Header />
@@ -22,7 +30,6 @@ export default function HomePage() {
       <Divider />
       <SectionInfoEquip />
       <Divider />
-
 
       <SectionInfoTestim 
         titleSection={"Testimonios"}

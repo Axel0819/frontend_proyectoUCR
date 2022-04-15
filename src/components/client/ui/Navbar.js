@@ -1,9 +1,8 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 import { Container } from '../layouts/Container'
 import { LogoCecamm } from './LogoCecamm'
-import { useState } from 'react'
 
 export default function Navbar({ openModalContact, openModalTranslate, openModalSearch, menuIsOpen, setMenuIsOpen }) {
     

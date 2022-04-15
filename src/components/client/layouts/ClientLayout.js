@@ -17,12 +17,16 @@ export default function ClientLayout() {
   const [typeModal, setTypeModal] = useState(0)
 
   useEffect(() => {
-    if(navigation){
+    if (navigation) {
       navigation.listen(() => {
         setMenuIsOpen(false)
       })
     }
   }, [navigation])
+
+  useEffect(() => {
+    document.querySelector('body').style.overflowY = menuIsOpen ? 'hidden' : 'scroll'
+  }, [menuIsOpen])
 
   const closeModal = () => {
     setModalIsOpen(false)
@@ -55,15 +59,13 @@ export default function ClientLayout() {
         />
       </Suspense>
 
-      {!menuIsOpen && (
-        <>
-          <div className="main">
-            <Outlet />
-          </div>
+      <>
+        <div className="main">
+          <Outlet />
+        </div>
 
-          <Footer menuIsOpen={menuIsOpen} />
-        </>
-      )}
+        <Footer menuIsOpen={menuIsOpen} />
+      </>
 
       <ModalApp modalIsOpen={modalIsOpen} closeModal={closeModal}>
         {typeModal === modalEnum.contact && (

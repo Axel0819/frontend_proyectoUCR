@@ -35,7 +35,7 @@ export function SectionInfoEquip() {
     }, [])
 
     return (
-        <div ref={containerRef}>
+        <div className="sectionInfoEquip" ref={containerRef}>
             <Container>
                 <ContainerResponsive reverse={false} heightAuto={true}>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 flex flex-column justify-content-center gap-50">
