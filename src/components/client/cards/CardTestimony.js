@@ -12,7 +12,7 @@ export function CardTestimony({name, img, description, subtitleCard}) {
                 <small className="text-font-open-sans">{subtitleCard}</small>
             </div>
 
-            <p className="card__testimony__description text-font-open-sans">
+            <p className="card__testimony__description text-font-open-sans text-justify">
                 <i className="fa-solid fa-quote-left mr-2"></i>
                 {description}
                 <i className="fa-solid fa-quote-right ml-2"></i>

@@ -14,7 +14,7 @@ export const SectionInfoCecamm = () => {
                     <TitleSection title={'Centro de Capacitación de Marina Mercante de la Universidad de Costa Rica'} />
                     <CardCountries />
 
-                    <p className="text-font-open-sans spacing text-color-description px-3">
+                    <p className="text-font-open-sans spacing text-color-description px-3 text-justify">
                         Como parte de una iniciativa para cubrir las necesidades de capacitación en el ambito de la marina mercante se crea el CECAMM, como un centro de formación que se proyecta para ocupar oportunamente el rol de formación.
                     </p>
 

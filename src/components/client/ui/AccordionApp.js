@@ -32,7 +32,7 @@ export function AccordionApp({ title, description, isBlack, colorText = "#494949
                             <div className="panel__text">
                                 <p style={{
                                     color: colorText
-                                }} className="text-font-open-sans">
+                                }} className="text-font-open-sans text-justify px-2">
                                     {description}
                                 </p>
                             </div>

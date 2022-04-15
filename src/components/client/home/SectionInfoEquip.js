@@ -21,7 +21,7 @@ export function SectionInfoEquip() {
         setControllerDescrip(setColor)
     }
 
-    const classNameDesp = classNames('text-font-abel', 'descriptionTextSectionEquip', 'px-3', {
+    const classNameDesp = classNames('text-font-abel', 'descriptionTextSectionEquip', 'px-3', 'text-justify', {
         'showInfoText': controllerDescrip
     })
 

@@ -10,10 +10,10 @@ export function CardCulture({ title, icon, description }) {
                 <i className={icon}></i>
             </div>
 
-            <div className="flex align-items-center h-full">
+            <div className="flex align-items-center h-full text-justify">
                 {
                     (typeof description === 'string') ? 
-                        <p className="text-font-open-sans text-center card__description">{description}</p>
+                        <p className="text-font-open-sans card__description">{description}</p>
                      : 
                      (
                         <ul>

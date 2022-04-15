@@ -19,7 +19,7 @@ export function CardCourse() {
 
         <div className="card__body flex flex-column gap-40">
             <div className="card__body__description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, delectus obcaecati ullam ad excepturi dolor quod eaque assumenda accusantium, atque iure quasi aut blanditiis aliquid ea id repellat, adipisci quaerat! lore lore</p>
+                <p className="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, delectus obcaecati ullam ad excepturi dolor quod eaque assumenda accusantium, atque iure quasi aut blanditiis aliquid ea id repellat, adipisci quaerat! lore lore</p>
             </div>
             <div className="card__body__footer">
                 <p className="mb-2">Fecha: Enero 2022</p>

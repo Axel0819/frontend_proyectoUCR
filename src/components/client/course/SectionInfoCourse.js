@@ -18,7 +18,7 @@ export function SectionInfoCourse({
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 py-7 section__info__description">
                         <div className="flex flex-column gap-50">
                             <h1 className="text-font-abel section__info__title">{name} - Curso Modelo OMI {omi}</h1>
-                            <p className="text-font-open-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptates laboriosam perferendis eius dolorum eveniet, veniam, odit debitis ex impedit aliquam minus possimus, obcaecati voluptatum porro corporis at dolore exercitationem.</p>
+                            <p className="text-font-open-sans text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptates laboriosam perferendis eius dolorum eveniet, veniam, odit debitis ex impedit aliquam minus possimus, obcaecati voluptatum porro corporis at dolore exercitationem.</p>
                             <div>
                                 <a rel="noreferrer" href="https://facebook.com" target="_blank">
                                     <div className="flex align-items-center">

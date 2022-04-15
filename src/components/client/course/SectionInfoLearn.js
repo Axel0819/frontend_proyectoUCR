@@ -14,7 +14,7 @@ export function SectionInfoLearn({ listLearn = [] }) {
                     </div>
 
                     <div className="xl:p-6 lg:p-6 pd:p-6 sm:p-6 learn__list__body">
-                        <ul>
+                        <ul className="text-justify">
                             {
                                 listLearn.map((item, i) => (
                                     <li key={i}>{item}</li>
