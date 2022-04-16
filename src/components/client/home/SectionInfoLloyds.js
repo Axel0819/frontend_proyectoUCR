@@ -8,7 +8,7 @@ import { descriptionLloydR } from '../../../data/textLarge'
 
 export function SectionInfoLloyds() {
     return (
-        <div className="sectionInfoLloyds my-8">
+        <div className="sectionInfoLloyds load-hidden my-8">
             <Container>
                 <ContainerResponsive reverse={false} heightAuto={true}>
                     <div className="xl:col-7 lg:col-7 md:col-12 sm:col-12 flex justify-content-center align-items-center container__logo">

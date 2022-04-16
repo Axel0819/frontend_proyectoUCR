@@ -2,12 +2,15 @@ import classNames from 'classnames';
 import queryString from 'query-string'
 import { useLocation } from "react-router-dom";
 import useGetNumbersFilters from "../../../hooks/useGetNumbersFilters";
+// import { useScrollReveal } from '../../../hooks/useScrollReveal';
 import { CardCourse } from "../cards/CardCourse";
 import { TitleSection } from "../home/TitleSection";
 
 
 //NOTA: Al cargar el componente por primera vez se cargaran los cursos abiertos por defecto
 export function ContainerCourses({ openFilter, heightToFilter }) {
+
+    // useScrollReveal(['.container__courses__results'])
     const location = useLocation()
 
     const filters = queryString.parse(location.search)
@@ -25,7 +28,7 @@ export function ContainerCourses({ openFilter, heightToFilter }) {
         <div className={proof}>
             {
                 (isEmpty || !!filters.q) && (
-                    <div className="mb-4">
+                    <div className="mb-4 containerCourses-title">
                         <TitleSection title={titleSearch} />
                     </div>
                 )
@@ -33,7 +36,7 @@ export function ContainerCourses({ openFilter, heightToFilter }) {
 
             {
                 (!isEmpty && !filters.q) && (
-                    <div className="mb-4">
+                    <div className="mb-4 containerCourses-title">
                         <TitleSection title={'Filtros aplicados'} />
                     </div>
                 )

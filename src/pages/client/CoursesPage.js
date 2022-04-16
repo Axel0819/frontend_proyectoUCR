@@ -6,10 +6,12 @@ import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { ContainerFilter } from '../../components/client/courses/ContainerFilter'
 import { ContainerCourses } from '../../components/client/courses/ContainerCourses'
 import { CoursesState } from '../../components/client/courses/CoursesState'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function CoursesPage() {
+  useScrollReveal(['.coursesPage-body'], false)
   const [openFilter, setOpenFilter] = useState(false)
-  const [ heightToFilter, setHeightToFilter ] = useState(0)
+  const [heightToFilter, setHeightToFilter] = useState(0)
 
   const classContainer = classNames('flex', 'container__courses', {
     'filterOpen': !openFilter
@@ -18,15 +20,19 @@ export default function CoursesPage() {
   return (
     <CoursesState>
       <TitleSectionPage title={'Cursos'} />
-      <Container>
-        <Options openFilter={openFilter} setOpenFilter={setOpenFilter} />
 
-        <div className={classContainer}>
-          <ContainerFilter openFilter={openFilter} setHeightToFilter={setHeightToFilter}/>
-          <ContainerCourses openFilter={openFilter} heightToFilter={heightToFilter} />
-        </div>
+      <div style={{ position: 'static' }} className='coursesPage-body load-hidden'>
+        <Container>
+          <Options openFilter={openFilter} setOpenFilter={setOpenFilter} />
 
-      </Container>
+          <div className={classContainer}>
+            <ContainerFilter openFilter={openFilter} setHeightToFilter={setHeightToFilter} />
+            <ContainerCourses openFilter={openFilter} heightToFilter={heightToFilter} />
+          </div>
+
+        </Container>
+      </div>
+
     </CoursesState>
   )
 }

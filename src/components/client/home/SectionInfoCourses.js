@@ -7,7 +7,7 @@ import { TitleSection } from "./TitleSection";
 
 export function SectionInfoCourses() {
     return (
-        <div className="sectionInfoCourses">
+        <div className="sectionInfoCourses load-hidden">
             <Container>
                 <ContainerResponsive heightAuto={true}>
                     <div className="col-12 flex flex-column gap-50">

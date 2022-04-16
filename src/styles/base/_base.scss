@@ -17,6 +17,10 @@ html {
     height: 100%;
 }
 
+html.sr .load-hidden {
+    visibility: hidden;
+}
+
 .grid__container {
     display: grid;
     // gap: 10px;

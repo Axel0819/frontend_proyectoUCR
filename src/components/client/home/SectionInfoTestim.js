@@ -7,7 +7,7 @@ import { TitleSection } from './TitleSection'
 
 export function SectionInfoTestim({ titleSection, subtitleCard, comments }) {
     return (
-        <div className="sectionInfoTestim">
+        <div className="sectionInfoTestim load-hidden">
             <Container>
                 <TitleSection title={titleSection} />
 

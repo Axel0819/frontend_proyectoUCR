@@ -3,8 +3,10 @@ import { Container } from '@mui/material'
 import { TablePrices } from '../../components/client/prices/TablePrices'
 import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { SearchBarDebounce } from '../../components/client/ui/SearchBarDebounce'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function PricesPage() {
+  useScrollReveal(['.pricesPage-body'], false)
 
   const [pricesCourses, setPricesCourses] = useState([])
 
@@ -17,7 +19,7 @@ export default function PricesPage() {
     <TitleSectionPage title={'Nuestros Precios'} />
     <div className="container__prices flex justify-content-center my-6">
       <Container maxWidth="xl">
-        <div className="flex flex-column gap-20">
+        <div className="flex flex-column gap-20 pricesPage-body load-hidden">
           <SearchBarDebounce handleSearch={handleSearch} focus={false}/>
           <TablePrices />
         </div>

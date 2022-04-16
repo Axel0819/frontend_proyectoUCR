@@ -6,19 +6,12 @@ import { SectionInfoCourses } from '../../components/client/home/SectionInfoCour
 import { SectionInfoEquip } from '../../components/client/home/SectionInfoEquip';
 import { SectionInfoTestim } from '../../components/client/home/SectionInfoTestim';
 
-import { testimomials  } from '../../data/testimonials'
-import ScrollReveal from 'scrollreveal'
-import { useEffect } from 'react';
+import { testimomials } from '../../data/testimonials'
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 export default function HomePage() {
-  useEffect(() => {
-    const elementsReveal = ['.sectionInfoCecamm', '.divider', '.sectionInfoLloyds', '.sectionInfoCourses', '.sectionInfoEquip', '.sectionInfoTestim']
+  useScrollReveal(['.sectionInfoCecamm', '.divider', '.sectionInfoLloyds', '.sectionInfoCourses', '.sectionInfoEquip', '.sectionInfoTestim'])
 
-    elementsReveal.forEach(e => {
-      ScrollReveal().reveal(e, {delay: 500, reset: true})
-    })
-    ScrollReveal().reveal('.divider', {delay: 250, reset: true})
-  }, [])
   return (
     <>
       <Header />
@@ -31,7 +24,7 @@ export default function HomePage() {
       <SectionInfoEquip />
       <Divider />
 
-      <SectionInfoTestim 
+      <SectionInfoTestim
         titleSection={"Testimonios"}
         subtitleCard={"Cadete del CECAMM-UCR"}
         comments={testimomials}

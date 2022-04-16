@@ -18,7 +18,7 @@ export function SectionInfoCulture() {
     }, [])
 
     return (
-        <div className="my-6">
+        <div className="sectionInfoCulture load-hidden my-6">
             <Container>
                 <div className="flex flex-column gap-20">
                     <h1 className="text-font-abel text-center title__section__about">Nuestra Cultura</h1>

@@ -4,7 +4,7 @@ import { Container } from '../layouts/Container'
 
 export function SectionInfoDescrip() {
     return (
-        <div className="my-6">
+        <div className="sectionInfoDescrip load-hidden my-6">
             <Container>
                 <div className="flex justify-content-center">
                     <div className="flex flex-column gap-20 text-center container__info container__info px-3">

@@ -8,7 +8,7 @@ import { CardCountries } from '../cards/CardCountries'
 
 export const SectionInfoCecamm = () => {
     return (
-        <div className='sectionInfoCecamm'>
+        <div className='sectionInfoCecamm load-hidden'>
             <Container>
                 <ContainerResponsive reverse={true}>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 col__item flex flex-column justify-content-center gap-50">
