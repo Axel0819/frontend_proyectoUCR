@@ -29,11 +29,11 @@ export function Footer() {
 
                         <div className="flex flex-column gap-10">
                             <p className="footer__title">Teléfonos</p>
-                            <p className="footer__info">2511-7349</p>
+                            <a rel="noreferrer" className="footer__info" href="tel:+5062511-7349">+506 2511-7349</a>
                         </div>
                         <div className="flex flex-column gap-10">
                             <p className="footer__title">Correo</p>
-                            <p className="footer__info">cecamm.sedecaribe@ucr.ac.cr</p>
+                            <a rel="noreferrer" className="footer__info" href="mailto:cecamm.sedecaribe@ucr.ac.cr">cecamm.sedecaribe@ucr.ac.cr</a>
                         </div>
 
                         <div className="flex flex-column gap-10">

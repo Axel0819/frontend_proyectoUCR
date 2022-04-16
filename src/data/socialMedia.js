@@ -4,7 +4,7 @@ export const socialMedia = [
         link: 'https://www.youtube.com/c/midudev'
     },
     {
-        name: 'instagram',
+        name: 'facebook-messenger',
         link: 'https://www.youtube.com/c/midudev'
     },
     {
@@ -13,6 +13,6 @@ export const socialMedia = [
     },
     {
         name: 'whatsapp',
-        link: 'https://www.youtube.com/c/midudev'
+        link: 'https://api.whatsapp.com/send?phone=50685169415'
     }
 ]
