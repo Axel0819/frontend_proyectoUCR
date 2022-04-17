@@ -6,7 +6,7 @@ import { SearchBarDebounce } from '../../components/client/ui/SearchBarDebounce'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function PricesPage() {
-  useScrollReveal(['.pricesPage-body'], false)
+  useScrollReveal(['.pricesPage-body'], false, 250)
 
   const [pricesCourses, setPricesCourses] = useState([])
 

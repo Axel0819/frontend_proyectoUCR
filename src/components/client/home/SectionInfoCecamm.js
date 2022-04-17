@@ -22,7 +22,7 @@ export const SectionInfoCecamm = () => {
                     </div>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 col__item flex justify-content-center align-items-center container__logo">
                         <div className="px-3">
-                            <img src={logoBlack} alt="Logo CECAMM" />
+                            <img src={logoBlack} alt="Logo CECAMM" loading="lazy"/>
                         </div>
                     </div>
                 </ContainerResponsive>

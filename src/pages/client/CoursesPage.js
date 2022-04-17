@@ -9,7 +9,7 @@ import { CoursesState } from '../../components/client/courses/CoursesState'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function CoursesPage() {
-  useScrollReveal(['.coursesPage-body'], false)
+  useScrollReveal(['.coursesPage-body'], false, 250)
   const [openFilter, setOpenFilter] = useState(false)
   const [heightToFilter, setHeightToFilter] = useState(0)
 
