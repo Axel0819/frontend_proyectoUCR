@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import App  from './App';
 
@@ -13,8 +12,6 @@ import './config/i18n' // config tranductions
 // Dimension minima de las imagenes del header 1920 x 825
 
 ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <App />,
   document.getElementById('root')
 );

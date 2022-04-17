@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <title>React App</title>
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" href="%PUBLIC_URL%/logoIconoC.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logoIconoC.png" />
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
@@ -23,31 +23,16 @@
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- <style>
-      .svgLoader {
-        animation: spin 0.5s linear infinite;
-        margin: auto;
-      }
-      .divLoader {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* z-index: 9999; */
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    </style> -->
-
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-
+  <div id="root">
+    <div class="load__app">
+      <object data="logoVector.svg" aria-label="Load image"></object>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
     integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
@@ -55,12 +40,6 @@
   <script src="https://unpkg.com/scrollreveal"></script>
 
   <script>SmoothScroll({ animationTime: 500, stepSize: 50 })</script>
-
-  <!-- <div class="divLoader">
-    <svg class="svgLoader" viewBox="0 0 100 100" width="10em" height="10em">
-      <path ng-attr-d="{{config.pathCmd}}" ng-attr-fill="{{config.color}}" stroke="none" d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#51CACC" transform="rotate(179.719 50 51)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></path>
-    </svg>
-  </div> -->
 
 </body>
 
