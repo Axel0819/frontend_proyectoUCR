@@ -3,11 +3,11 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 // proof se refiere a si el carousel esta listo para montarse
-export const Carousel = ({ children, options = { loop: true }, play = true, proof=true}) => {
+export const Carousel = ({ children, options = { loop: true }, play = true, proof=true, stopOnMouseEnter=false}) => {
 
   const autoplay = useRef(
     Autoplay(
-      { delay: 3000, stopOnInteraction: false, playOnInit: play },
+      { delay: 3000, stopOnInteraction: false, playOnInit: play, stopOnMouseEnter},
       (emblaRoot) => emblaRoot.parentElement
     )
   )

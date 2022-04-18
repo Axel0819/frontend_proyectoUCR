@@ -19,7 +19,7 @@ export function SectionInfoCourses() {
                                 loop: true,
                                 containScroll: "keepSnaps",
                                 align: 'start'
-                            }} play={true}>
+                            }} play={true} stopOnMouseEnter={true}>
                                 {
                                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(item => (
                                         <ItemCarousel key={item} fullHeight={false}>

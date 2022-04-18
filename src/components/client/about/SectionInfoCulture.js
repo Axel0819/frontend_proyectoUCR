@@ -28,7 +28,7 @@ export function SectionInfoCulture() {
                             <Carousel options={{
                                 loop: true,
                                 align: 'center'
-                            }}>
+                            }} stopOnMouseEnter={true}>
                                 {
                                     dataCulture.map((data, i) => (
                                         <ItemCarousel key={data.title + i} fullHeight={false}>

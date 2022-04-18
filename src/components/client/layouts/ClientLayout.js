@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useContext, useEffect } from 'react'
+import { Suspense, lazy, useState, useContext, useEffect, useLayoutEffect, useRef } from 'react'
 import { Outlet, UNSAFE_NavigationContext } from 'react-router-dom'
 import { modalEnum } from '../../../enum/modalEnum'
 import { ContactModal } from '../modals/ContactModal'
@@ -10,19 +10,39 @@ import { Footer } from '../ui/Footer'
 const Navbar = lazy(() => import('../ui/Navbar'))
 
 export default function ClientLayout() {
+  const existSearch = useRef("")
+
   const navigation = useContext(UNSAFE_NavigationContext).navigator
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [typeModal, setTypeModal] = useState(0)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (navigation) {
-      navigation.listen(() => {
-        setMenuIsOpen(false)
+      navigation.listen(({location}) => {
+        if(location.search === "") {
+
+          if(existSearch.current !== "") {
+            existSearch.current = ""
+          } else {
+            window.scrollTo(0, 0)
+          }
+
+        } else {
+          existSearch.current = location.search
+        }
       })
     }
   }, [navigation])
+
+  useEffect(() => {
+    if (navigation) {
+      navigation.listen(() => {
+        if(menuIsOpen) return setMenuIsOpen(false)
+      })
+    }
+  }, [navigation, menuIsOpen])
 
   useEffect(() => {
     document.querySelector('body').style.overflowY = menuIsOpen ? 'hidden' : 'scroll'

@@ -5,12 +5,12 @@ import LoadApp from './components/loaders/LoadApp';
 const App = () => {
   const [load, setLoad] = useState(false)
 
-  const scrollX = window.scrollX;
-  const scrollY = window.scrollY;
+  // const scrollX = window.scrollX;
+  // const scrollY = window.scrollY;
 
-  useLayoutEffect(() => {
-    window.scrollTo(scrollX, scrollY);
-  }, [scrollX, scrollY])
+  // useLayoutEffect(() => {
+  //   window.scrollTo(scrollX, scrollY);
+  // }, [scrollX, scrollY])
 
   const hanldeLoad = () => {
     return new Promise(resolve => {

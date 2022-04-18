@@ -55,7 +55,7 @@ export function SectionInfoEquip() {
                             loop: true,
                             containScroll: "keepSnaps",
                             align: 'start'
-                        }} play={true} proof={controllerDescrip}>
+                        }} play={true} proof={controllerDescrip}  stopOnMouseEnter={true}>
                             {
 
                                 [1, 2, 3].map(item => (

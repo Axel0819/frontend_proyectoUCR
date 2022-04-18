@@ -1,56 +1,27 @@
-import { NavLink } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 import { Container } from '../layouts/Container'
 import { LogoCecamm } from './LogoCecamm'
+import { lazy, Suspense } from 'react'
+// import LinksNavbar from './LinksNavbar'
+
+const LinksNavbar = lazy(() => import('./LinksNavbar'))
 
 export default function Navbar({ openModalContact, openModalTranslate, openModalSearch, menuIsOpen, setMenuIsOpen }) {
-    
-    const { t, i18n } = useTranslation(['navbar'])
-
-    const handleClick = () => {
-        i18n.changeLanguage('en')
-    }
-
     return (
         <nav className="navbar flex flex-column justify-content-center">
             <Container>
                 <div className="flex align-items-center justify-content-between">
 
-                   <LogoCecamm />
+                    <LogoCecamm />
 
                     <div className={
                         classNames('flex', 'justify-content-between', 'flex-wrap', 'gap-40', 'navbar__list', {
                             'menuIsActive': menuIsOpen
                         })
                     }>
-                        <NavLink
-                            className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
-                            to="/"
-                        >
-                            Inicio
-                        </NavLink>
-
-                        <NavLink
-                            className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
-                            to="aboutus"
-                        >
-                            ¿Quiénes Somos?
-                        </NavLink>
-                        <NavLink
-                            className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
-                            to="courses"
-                        >
-                            Cursos
-                        </NavLink>
-                        <NavLink
-                            className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
-                            to="prices"
-                        >
-                            {/* Precios */}
-                            { t('proof') }
-                        </NavLink>
-
+                        <Suspense fallback={<p>Cargando</p>}>
+                            <LinksNavbar />
+                        </Suspense>
                     </div>
 
                     <div className={
@@ -67,7 +38,7 @@ export default function Navbar({ openModalContact, openModalTranslate, openModal
                             onClick={openModalContact}
                             className="fa-solid fa-envelope"
                         ></i>
-                        
+
                         <i
                             onClick={openModalTranslate}
                             className="fa-solid fa-globe"
@@ -82,9 +53,6 @@ export default function Navbar({ openModalContact, openModalTranslate, openModal
                     </div>
 
                 </div>
-                {/* <h1>{ t('title') }</h1>
-                </div>
-                <button onClick={handleClick}>cambia</button>     */}
             </Container>
         </nav>
     )

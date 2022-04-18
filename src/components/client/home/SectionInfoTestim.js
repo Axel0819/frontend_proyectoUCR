@@ -18,7 +18,7 @@ export function SectionInfoTestim({ titleSection, subtitleCard, comments }) {
                             <Carousel options={{
                                 loop: true,
                                 align: 'center'
-                            }}>
+                            }}  stopOnMouseEnter={true}>
                                 {
                                     comments.map(data => (
                                         <ItemCarousel key={data.img} fullHeight={false}>

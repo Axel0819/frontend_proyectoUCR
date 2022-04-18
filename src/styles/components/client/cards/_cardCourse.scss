@@ -1,8 +1,18 @@
+.card__course__link {
+    color: black;
+}
+
 .card__course {
     width: 425px;
     border-radius: 2px;
+    cursor: pointer;
     // border: 1px solid $active;
     // background-color: red;
+    transition: box-shadow .3s;
+
+    &:hover {
+        box-shadow: 0 0 8px 0 rgb(46, 163, 242);
+    }
 
     @media (max-width: 576px) {
         width: 100%;

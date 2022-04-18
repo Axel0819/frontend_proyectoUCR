@@ -45,7 +45,7 @@ export function ContainerCourses({ openFilter, heightToFilter }) {
             <div style={{
                 height: (openFilter && window.innerWidth <= 576) ? `${heightToFilter}px` : 'auto'
             }}
-                className="flex flex-wrap justify-content-around courses__results__cards mx-3">
+                className="flex flex-wrap justify-content-around courses__results__cards mx-3 my-4">
                 <CardCourse />
                 <CardCourse />
                 <CardCourse />
