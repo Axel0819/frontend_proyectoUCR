@@ -11,8 +11,6 @@ export const Header = () => {
   useEffect(() => {
     ScrollReveal().reveal('.home__header__title', { scale: 0.85 })
   }, [])
-  
-
 
   return (
     <header className="home__header mb-3">
