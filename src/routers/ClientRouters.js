@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import ClientLayout from '../components/client/layouts/ClientLayout'
 
 import HomePage from '../pages/client/HomePage'
@@ -16,7 +16,7 @@ function ClientRouters() {
             <Route path="courses" element={<CoursesPage />} />
             <Route path="course/:id" element={<CoursePage />} />
             <Route path="prices" element={<PricesPage />} />
-            <Route path="*" element={ <h1>Not found</h1> }/>
+            <Route path="*" element={ <Navigate to="/" replace/> }/>
           </Route>
         </Routes>
     )

@@ -5,11 +5,13 @@ import { SectionInfoTestim } from '../../components/client/home/SectionInfoTesti
 import { dataCourseLearn } from '../../data/dataCourse';
 import { testimomials } from '../../data/testimonials';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { useTitle } from '../../hooks/useTitle';
 
 export function CoursePage() {
     const { id } = useParams()
     
-    const titleCourse = "Primeros Auxilios Básicos" 
+    const titleCourse = "Primeros Auxilios Básicos"
+    useTitle({ title: titleCourse }) 
     useScrollReveal(['.container__section__info', '.sectionInfoLearn', '.sectionInfoTestim'], true, 250)
 
     return (

@@ -4,8 +4,10 @@ import { TablePrices } from '../../components/client/prices/TablePrices'
 import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { SearchBarDebounce } from '../../components/client/ui/SearchBarDebounce'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
+import { useTitle } from '../../hooks/useTitle'
 
 export default function PricesPage() {
+  useTitle({ title: 'Prices' })
   useScrollReveal(['.pricesPage-body'], false, 250)
 
   const [pricesCourses, setPricesCourses] = useState([])
