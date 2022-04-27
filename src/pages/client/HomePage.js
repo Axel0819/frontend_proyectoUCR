@@ -8,10 +8,10 @@ import { SectionInfoTestim } from '../../components/client/home/SectionInfoTesti
 
 import { testimomials } from '../../data/testimonials'
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { useTitle } from '../../hooks/useTitle';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function HomePage() {
-  useTitle({ title: 'Home' })
+  useSEO({ title: 'Home' })
   useScrollReveal(['.sectionInfoCecamm', '.divider', '.sectionInfoLloyds', '.sectionInfoCourses', '.sectionInfoEquip', '.sectionInfoTestim'])
 
   return (

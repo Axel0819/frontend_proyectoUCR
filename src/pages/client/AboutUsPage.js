@@ -6,10 +6,10 @@ import { SectionInfoHistory } from '../../components/client/about/SectionInfoHis
 import { Divider } from '../../components/client/ui/Divider'
 import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import { useTitle } from '../../hooks/useTitle'
+import { useSEO } from '../../hooks/useSEO'
 
 export default function AboutUsPage() {
-  useTitle({ title: 'About' })
+  useSEO({ title: 'About' })
   useScrollReveal(['.sectionInfoDescrip', '.imageInit', '.sectionInfoCulture', '.sectionInfoHistory'])
 
 

@@ -11,8 +11,8 @@ export function SearchBarDebounce({ handleSearch, focus=true }) {
     });
 
     const handleChange = (e) => {
-        const value = e?.target?.value
-        if (!value) return
+        const value = e.target.value
+        //if (!value) return
         handleSearch(value)
 
         // Aqui se realiza la busqueda

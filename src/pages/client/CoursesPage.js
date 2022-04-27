@@ -7,11 +7,11 @@ import { ContainerFilter } from '../../components/client/courses/ContainerFilter
 import { ContainerCourses } from '../../components/client/courses/ContainerCourses'
 import { CoursesState } from '../../components/client/courses/CoursesState'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import { useTitle } from '../../hooks/useTitle'
+import { useSEO } from '../../hooks/useSEO'
 
 export default function CoursesPage() {
-  useTitle({ title: 'Courses' })
   useScrollReveal(['.coursesPage-body'], false, 250)
+  useSEO({ title: 'Courses' })
   const [openFilter, setOpenFilter] = useState(false)
   const [heightToFilter, setHeightToFilter] = useState(0)
 
