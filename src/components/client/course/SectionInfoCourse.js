@@ -1,5 +1,6 @@
 import { Container } from "../layouts/Container";
 import { ContainerResponsive } from "../layouts/ContainerResponsive";
+import { TableApp } from "../prices/TableApp";
 
 export function SectionInfoCourse({
     name,
@@ -31,9 +32,12 @@ export function SectionInfoCourse({
                     </div>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 pt-7 section__info__buy flex flex-column justify-content-between">
                         <div className="flex flex-column gap-20">
-                            <div className="flex justify-content-between buy__header">
+                            {/* <div className="flex justify-content-between buy__header">
                                 <h1 className="text-font-abel section__info__title">Precio de matrícula: {price} CRC</h1>
                                 <span className="text-font-abel state__course state__course__open">Abierto</span>
+                            </div> */}
+                            <div className="buy__header">
+                                <TableApp titleHead="Precios" columns={['Nacionales', 'Extranjero']} rows={['$250.00', '$300.00']} isPriceCourse={true} />
                             </div>
 
                             <div className="flex flex-column gap-20 buy__details">

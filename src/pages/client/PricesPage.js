@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Container } from '@mui/material'
-import { TablePrices } from '../../components/client/prices/TablePrices'
+import { TableApp } from '../../components/client/prices/TableApp'
 import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { SearchBarDebounce } from '../../components/client/ui/SearchBarDebounce'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import Helmet from 'react-helmet'
+import { columnsPrices, rows } from '../../data/dataTable'
 
 export default function PricesPage() {
   const [keyword, setKeyword] = useState('')
@@ -33,7 +34,7 @@ export default function PricesPage() {
         <Container maxWidth="xl">
           <div className="flex flex-column gap-20 pricesPage-body load-hidden">
             <SearchBarDebounce setKeyword={setKeyword} handleSearch={handleSearch} focus={false} />
-            <TablePrices />
+            <TableApp titleHead={'Información de los cursos'} columns={columnsPrices} rows={ rows } />
           </div>
         </Container>
       </div>
