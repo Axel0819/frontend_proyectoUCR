@@ -29,16 +29,23 @@ export function Footer() {
                         </div>
                         <div style={{ width: '150px' }} className="flex flex-column gap-10">
                             <p className="footer__title">Visita</p>
-                            <p className="footer__info">Costa Rica, Limon. Universidad de Costa Rica, Sede del Caribe</p>
+                            <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://maps.google.com/?q=9.983669450112677,-83.06263596931478" 
+                                className="footer__info footer-link"
+                            >
+                                Costa Rica, Limon. Universidad de Costa Rica, Sede del Caribe
+                            </a>
                         </div>
 
                         <div className="flex flex-column gap-10">
                             <p className="footer__title">Teléfonos</p>
-                            <a rel="noreferrer" className="footer__info" href="tel:+5062511-7349">+506 2511-7349</a>
+                            <a rel="noreferrer" className="footer__info footer-link" href="tel:+5062511-7349">+506 2511-7349</a>
                         </div>
                         <div className="flex flex-column gap-10">
                             <p className="footer__title">Correo</p>
-                            <a rel="noreferrer" className="footer__info" href="mailto:cecamm.sedecaribe@ucr.ac.cr">cecamm.sedecaribe@ucr.ac.cr</a>
+                            <a rel="noreferrer" target="_blank" className="footer__info footer-link" href="mailto:cecamm.sedecaribe@ucr.ac.cr">cecamm.sedecaribe@ucr.ac.cr</a>
                         </div>
                     </div>
 

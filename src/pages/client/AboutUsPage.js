@@ -18,7 +18,7 @@ export default function AboutUsPage() {
         <meta name="description" content="Conozca más sobre el CECAMM-UCR, nuestra cultura y nuestra historia" />
       </Helmet>
 
-      <TitleSectionPage title={'¿Quiénes Somos?'} isAbout={true} />
+      <TitleSectionPage title={'¿Quiénes somos?'} isAbout={true} />
       <ImageInit />
       <SectionInfoDescrip />
       <Divider />

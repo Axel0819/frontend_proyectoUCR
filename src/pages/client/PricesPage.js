@@ -28,7 +28,7 @@ export default function PricesPage() {
         <meta name="description" content="Conozca sobre los precios de los cursos que ofrece el CECAMM-UCR" />
       </Helmet>
 
-      <TitleSectionPage title={'Nuestros Precios'} />
+      <TitleSectionPage title={'Nuestros precios'} />
       <div className="container__prices flex justify-content-center my-6">
         <Container maxWidth="xl">
           <div className="flex flex-column gap-20 pricesPage-body load-hidden">
