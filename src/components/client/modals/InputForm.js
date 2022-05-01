@@ -2,7 +2,7 @@ import { TextField } from "@mui/material"
 import { FastField } from "formik";
 
 export const InputForm = ({ name, formik, ...rest }) => (
-    <FastField name={name}>
+    <FastField name={name} >
         {(field) => {
             const capitalizeFirstLetter = () => name.charAt(0).toUpperCase() + name.slice(1)
             const messageError = () => formik.touched[name] && formik.errors[name] ? formik.errors[name] : ''

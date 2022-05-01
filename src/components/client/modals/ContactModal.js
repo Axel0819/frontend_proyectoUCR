@@ -1,8 +1,17 @@
 import { useFormik, FormikProvider } from 'formik'
+import { useEffect, useState } from 'react';
 import * as yup from 'yup'
+import { AlertSuccess } from '../ui/AlertSuccess';
 import { InputForm } from './InputForm';
 
 export const ContactModal = ({ closeModal }) => {
+    const [open, setOpen] = useState(false)
+
+    const timeoutAlert = setTimeout(() => {
+        if (open) setOpen(false)
+    }, 4000);
+
+    const triggerTimeout = () => timeoutAlert
 
     const formik = useFormik({
         initialValues: {
@@ -21,10 +30,17 @@ export const ContactModal = ({ closeModal }) => {
             phone: yup.string().matches(/^[0-9]+$/, "Formato de número incorrecto").min(8, 'Formato de número incorrecto').max(8, 'Formato de número incorrecto'),
             message: yup.string().required('Este campo es requerido'),
         }),
-        onSubmit: (values) => {
+        onSubmit: (values, actions) => {
             console.log(values);
+            setOpen(true)
+            triggerTimeout()
+            actions.resetForm()
         }
     })
+
+    useEffect(() => {
+        return () => clearTimeout(timeoutAlert)
+    }, [timeoutAlert])
 
     return (
         <FormikProvider value={formik}>
@@ -35,9 +51,10 @@ export const ContactModal = ({ closeModal }) => {
                 <form onSubmit={formik.handleSubmit} autoComplete="off">
 
                     <div className="flex flex-column gap-20">
+                        <AlertSuccess open={open} setOpen={setOpen} />
                         <div className="flex gap-20">
                             <InputForm name="name" formik={formik} />
-                            <InputForm name="firstName" formik={formik}/>
+                            <InputForm name="firstName" formik={formik} />
                             <InputForm name="lastName" formik={formik} />
                         </div>
 
@@ -65,6 +82,6 @@ export const ContactModal = ({ closeModal }) => {
 
                 </form>
             </div>
-            </FormikProvider>
+        </FormikProvider>
     )
 }
