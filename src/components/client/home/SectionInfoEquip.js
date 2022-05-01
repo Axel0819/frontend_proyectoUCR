@@ -15,7 +15,7 @@ export function SectionInfoEquip() {
     const handleScroll = () => {
         const position = containerRef.current.offsetTop
         const sizeHeight = containerRef.current.offsetHeight
-        const setColor = window.scrollY > (position - sizeHeight / 3)
+        const setColor = window.scrollY > (position - sizeHeight / 1.5)
         document.body.classList.toggle('set-color', setColor)
 
         if (window.scrollY > (position + sizeHeight / 2)) document.body.classList.remove('set-color',)
@@ -35,10 +35,8 @@ export function SectionInfoEquip() {
         }
     }, [])
 
-    console.log(imgEquip);
-
     return (
-        <div className="sectionInfoEquip load-hidden" ref={containerRef}>
+        <div className="sectionInfoEquip load-hidden py-4" ref={containerRef}>
             <Container>
                 <ContainerResponsive reverse={false} heightAuto={true}>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 flex flex-column justify-content-center gap-50">
