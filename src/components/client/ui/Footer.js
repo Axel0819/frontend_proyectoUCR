@@ -40,12 +40,6 @@ export function Footer() {
                             <p className="footer__title">Correo</p>
                             <a rel="noreferrer" className="footer__info" href="mailto:cecamm.sedecaribe@ucr.ac.cr">cecamm.sedecaribe@ucr.ac.cr</a>
                         </div>
-
-                        <div className="flex flex-column gap-10">
-                            <p className="footer__title">Legal</p>
-                            <p className="footer__info">Términos y condiciones</p>
-                            <p className="footer__info">Declaración de privacidad</p>
-                        </div>
                     </div>
 
                     <div className="flex flex-wrap justify-content-between align-items-end gap-20 footer__social">
