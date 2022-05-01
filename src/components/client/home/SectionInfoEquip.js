@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useEffect, useRef, useState } from 'react'
 import { descriptionEquip } from '../../../data/textLarge'
+import { imgEquip } from '../../../helpers/appImages'
 import { Container } from '../layouts/Container'
 import { ContainerResponsive } from '../layouts/ContainerResponsive'
 import { AccordionApp } from '../ui/AccordionApp'
@@ -17,7 +18,7 @@ export function SectionInfoEquip() {
         const setColor = window.scrollY > (position - sizeHeight / 3)
         document.body.classList.toggle('set-color', setColor)
 
-        if(window.scrollY > (position + sizeHeight/2)) document.body.classList.remove('set-color', )
+        if (window.scrollY > (position + sizeHeight / 2)) document.body.classList.remove('set-color',)
         setControllerDescrip(setColor)
     }
 
@@ -33,6 +34,8 @@ export function SectionInfoEquip() {
             document.body.classList.remove('set-color')
         }
     }, [])
+
+    console.log(imgEquip);
 
     return (
         <div className="sectionInfoEquip load-hidden" ref={containerRef}>
@@ -55,15 +58,15 @@ export function SectionInfoEquip() {
                             loop: true,
                             containScroll: "keepSnaps",
                             align: 'start'
-                        }} play={true} proof={controllerDescrip}  stopOnMouseEnter={true}>
+                        }} play={true} proof={controllerDescrip} stopOnMouseEnter={true}>
                             {
 
-                                [1, 2, 3].map(item => (
-                                    <ItemCarousel key={item} fullHeight={true}>
+                                imgEquip.keys().map(path => (
+                                    <ItemCarousel key={path} fullHeight={false} fullWidth={true}>
                                         <img style={{
-                                            objectFit: 'cover',
+                                            objectFit: 'contain',
                                             borderRadius: '5px'
-                                        }} width="100%" height="100%" src={`https://picsum.photos/76${item}/700`} alt="imagen de prueba 9s" />
+                                        }} width="100%" height="100%" src={imgEquip(path)} alt="Equipo del CECAMM-UCR" />
                                     </ItemCarousel>
                                 ))
                             }

@@ -1,17 +1,10 @@
-import { useContext } from "react";
-import { useSEO } from "../../../hooks/useSEO";
-import { SearchContext } from "../../../context/SearchContext";
-import { OptionsFilter } from "./OptionsFilter";
-import { OptionsSearch } from "./OptionsSearch";
+import { useContext } from 'react';
+import { SearchContext } from '../../../context/SearchContext';
+import { OptionsFilter } from './OptionsFilter';
+import { OptionsSearch } from './OptionsSearch';
 
 export function Options({ openFilter, setOpenFilter }) {
-    const { searchState, dispatch } = useContext(SearchContext)
-    const [ query ] = searchState.q
-
-    // el 12 se refiere a la cantidad de resultados encontrados
-    const title = !query ? 'Courses' : `${12} resultados de ${query}`
-
-    useSEO({ title })
+    const { dispatch } = useContext(SearchContext)
 
     return (
         <div className="my-4 grid grid-nogutter container__options__courses">

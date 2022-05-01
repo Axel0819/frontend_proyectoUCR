@@ -7,15 +7,24 @@ export const useSEO = ({ description, title }) => {
     const prevDescription = useRef(document.querySelector('meta[name="description"]').getAttribute('content'))
     
     useEffect(() => {
-        const previusTitle = prevTitle.current
+        const previousTitle = prevTitle.current
 
-        if(title === 'Home') {
-            document.title = `CECAMM-UCR | ${title}`
-        } else {
-            document.title = `${title} | CECAMM-UCR`
+        if(title){ // si existe el title
+            document.title = title === 'Home' ? `CECAMM-UCR | ${title}` : `${title} | CECAMM-UCR`   
         }
 
-
-        return () => document.title = previusTitle
+        return () => document.title = previousTitle
     }, [title])
+
+    useEffect(() => {
+        const metaDescription = document.querySelector('meta[name="description"]')
+        const previousDescription = prevDescription.current
+
+      if(description){
+        metaDescription.setAttribute('content', description)
+      }
+    
+      return () => metaDescription.setAttribute('content', previousDescription)
+    }, [description])
+    
 }

@@ -1,13 +1,14 @@
 import React from 'react'
+import { appImages } from '../../../helpers/appImages'
 
 export function ImageInit() {
     return (
         <>
             {
-                // !(window.innerWidth < 576) &&
                 <img className="imageInit load-hidden" width="100%" height="300px" style={{
-                    objectFit: 'cover'
-                }} src="https://picsum.photos/1920/300" alt="Imagen de prueba" />
+                    objectFit: 'cover',
+                    objectPosition: '50% 73%'
+                }} src={appImages('./aboutHeader.jpeg')} alt="UCR - Sede del Caribe" />
             }
         </>
     )

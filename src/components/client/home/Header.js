@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
+import { imgHeader } from '../../../helpers/appImages';
 import { Container } from '../layouts/Container';
 import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel';
@@ -22,12 +23,11 @@ export const Header = () => {
       </div>
 
       {
-        // data.length > 0 && // El carousel se despliega solo si existe informacion
         <Carousel>
           {
-            [1, 2, 3].map((photo) => (
-              <ItemCarousel key={photo} fullHeight={true}>
-                <ImageHeader url={`https://picsum.photos/192${photo}/822`} />
+            imgHeader.keys().map((path) => (
+              <ItemCarousel key={path} fullHeight={true}>
+                <ImageHeader url={imgHeader(path)} />
               </ItemCarousel>
             ))
           }

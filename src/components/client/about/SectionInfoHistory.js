@@ -1,9 +1,11 @@
 import React from 'react'
 import { dataHistory } from '../../../data/dataHistory'
+import { appImages } from '../../../helpers/appImages'
 import { Container } from '../layouts/Container'
 import { ContainerResponsive } from '../layouts/ContainerResponsive'
 
 export function SectionInfoHistory() {
+    
     return (
         <div className="sectionInfoHistory load-hidden my-6">
             <Container>
@@ -15,7 +17,7 @@ export function SectionInfoHistory() {
                     </div>
 
                     <div className="col px-3 py-3 flex align-items-center">
-                        <img style={{borderRadius: 5}} width="100%" height="100%" src="https://picsum.photos/860/500" alt="Imagen de prueba" />
+                        <img style={{borderRadius: 5}} width="100%" height="100%" src={appImages('./historyCecamm.jpeg')} alt="Edificio de UCR Sede del Caribe" />
                     </div>
                 </ContainerResponsive>
             </Container>

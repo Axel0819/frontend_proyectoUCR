@@ -41,7 +41,7 @@
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
     
@@ -50,8 +50,12 @@
         font-family: 'Open Sans', sans-serif;
 
         .card__body__description {
-            height: 130px;
+            height: 160px;
             overflow-y: scroll;
+
+            & > p {
+                line-height: 32px;
+            }
         }
 
         .card__body__footer {

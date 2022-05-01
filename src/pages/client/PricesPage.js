@@ -4,17 +4,16 @@ import { TablePrices } from '../../components/client/prices/TablePrices'
 import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { SearchBarDebounce } from '../../components/client/ui/SearchBarDebounce'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import { useSEO } from '../../hooks/useSEO'
+import Helmet from 'react-helmet'
 
 export default function PricesPage() {
   const [keyword, setKeyword] = useState('')
   const [pricesCourses, setPricesCourses] = useState([])
-  
+
   const sizeQueryPrices = 9
-  
-  const title = !keyword ? 'Prices' : `${sizeQueryPrices} resultados de ${keyword}` 
-  
-  useSEO({ title })
+
+  const title = !keyword ? 'Prices' : `${sizeQueryPrices} resultados para ${keyword}`
+
   useScrollReveal(['.pricesPage-body'], false, 250)
 
   const handleSearch = (value) => {
@@ -24,15 +23,20 @@ export default function PricesPage() {
 
   return (
     <>
-    <TitleSectionPage title={'Nuestros Precios'} />
-    <div className="container__prices flex justify-content-center my-6">
-      <Container maxWidth="xl">
-        <div className="flex flex-column gap-20 pricesPage-body load-hidden">
-          <SearchBarDebounce setKeyword={setKeyword} handleSearch={handleSearch} focus={false}/>
-          <TablePrices />
-        </div>
-      </Container>
-    </div>
+      <Helmet>
+        <title>{title} | CECAMM-UCR</title>
+        <meta name="description" content="Conozca sobre los precios de los cursos que ofrece el CECAMM-UCR" />
+      </Helmet>
+
+      <TitleSectionPage title={'Nuestros Precios'} />
+      <div className="container__prices flex justify-content-center my-6">
+        <Container maxWidth="xl">
+          <div className="flex flex-column gap-20 pricesPage-body load-hidden">
+            <SearchBarDebounce setKeyword={setKeyword} handleSearch={handleSearch} focus={false} />
+            <TablePrices />
+          </div>
+        </Container>
+      </div>
     </>
   )
 }

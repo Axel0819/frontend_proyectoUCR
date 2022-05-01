@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { appImages } from '../../../helpers/appImages'
+
+
 
 export function CardCourse() {
     return (
@@ -16,11 +19,14 @@ export function CardCourse() {
                 </div>
 
                 <div className="card__img mb-3">
-                    <img src="https://picsum.photos/425/200" alt="Imagen de prueba" />
+                    <img 
+                        src={appImages('./omiLogo.png')} 
+                        alt="Logo OMI"
+                    />
                 </div>
 
                 <div className="card__body flex flex-column gap-40">
-                    <div className="card__body__description">
+                    <div className="card__body__description px-2">
                         <p className="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, delectus obcaecati ullam ad excepturi dolor quod eaque assumenda accusantium, atque iure quasi aut blanditiis aliquid ea id repellat, adipisci quaerat! lore lore</p>
                     </div>
                     <div className="card__body__footer">
