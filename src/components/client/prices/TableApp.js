@@ -3,10 +3,10 @@ import { Table, TableBody, TableCell, TableContainer, TableFooter, TablePaginati
 import { TablePaginationActions } from './TablePaginationActions';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles((theme) => {
+const useStyles = (isPriceCourse) => makeStyles(() => {
     return {
         table: {
-            minWidth: 500,
+            minWidth: isPriceCourse ? 500 : 0,
             "& .MuiTableCell-head": {
                 fontWeight: 600,
                 // color: 'red'
@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme) => {
         },
         title: {
             "& #tableTitle": {
-                fontWeight: 600,
+                fontWeight: 600
             }
         }
     };
 });
 
-const EnhancedTableToolbar = ({ title }) => {
+const EnhancedTableToolbar = ({ title, isPriceCourse }) => {
     const classes = useStyles()
     return (
         <Toolbar
@@ -35,6 +35,11 @@ const EnhancedTableToolbar = ({ title }) => {
                 variant="h6"
                 id="tableTitle"
                 component="div"
+                style={{
+                    textAlign: isPriceCourse && 'center',
+                    fontSize: isPriceCourse && '36px',
+                    color: '#494949'
+                }}
             >
                 {title}
             </Typography>
@@ -44,7 +49,7 @@ const EnhancedTableToolbar = ({ title }) => {
 
 
 export function TableApp({ titleHead, columns = [], rows, isPriceCourse = false }) {
-    const classes = useStyles()
+    const classes = useStyles(isPriceCourse)
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -65,14 +70,16 @@ export function TableApp({ titleHead, columns = [], rows, isPriceCourse = false 
 
     return (
         <Paper sx={{ width: '100%', mb: 2 }}>
-            <EnhancedTableToolbar title={titleHead} />
+            <EnhancedTableToolbar title={titleHead} isPriceCourse={ isPriceCourse }/>
             <TableContainer>
                 <Table className={classes.table} aria-label="custom pagination table">
                     <TableHead>
                         <TableRow>
                             {columns.map((col, i) => (
                                 <TableCell style={{
-                                    textAlign: 'center'
+                                    textAlign: isPriceCourse && 'center',
+                                    color: '#494949',
+                                    fontWeight: 600
                                 }} key={col + i}>
                                     {col}
                                 </TableCell>
@@ -81,7 +88,7 @@ export function TableApp({ titleHead, columns = [], rows, isPriceCourse = false 
                     </TableHead>
                     <TableBody>
 
-                        { !isPriceCourse ? (
+                        {!isPriceCourse ? (
                             (rowsPerPage > 0
                                 ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 : rows
@@ -112,15 +119,16 @@ export function TableApp({ titleHead, columns = [], rows, isPriceCourse = false 
                                 {
                                     rows.map((row, i) => (
                                         <TableCell style={{
-                                            textAlign: 'center'
+                                            textAlign: 'center',
+                                            color: '#494949'
                                         }} key={row + i}>
                                             {row}
                                         </TableCell>
                                     ))
-                                }       
+                                }
                             </TableRow>
-                        ) }
-                        
+                        )}
+
 
                         {emptyRows > 0 && (
                             <TableRow style={{ height: 53 * emptyRows }}>

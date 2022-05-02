@@ -36,8 +36,11 @@ export function SectionInfoCourse({
                                 <h1 className="text-font-abel section__info__title">Precio de matrícula: {price} CRC</h1>
                                 <span className="text-font-abel state__course state__course__open">Abierto</span>
                             </div> */}
-                            <div className="buy__header">
-                                <TableApp titleHead="Precios" columns={['Nacionales', 'Extranjero']} rows={['$250.00', '$300.00']} isPriceCourse={true} />
+                            <div>
+                                <div className="flex justify-content-end mb-3">
+                                    <span className="text-font-abel state__course state__course__open">Abierto</span>
+                                </div>
+                                <TableApp titleHead="Precios" columns={['Nacionales', 'Extranjeros']} rows={['$250.00', '$300.00']} isPriceCourse={true} />
                             </div>
 
                             <div className="flex flex-column gap-20 buy__details">
@@ -52,11 +55,11 @@ export function SectionInfoCourse({
                             </div>
                         </div>
                         <div className="flex justify-content-between align-items-end buy__action">
-                            <small className="text-font-abel">*La transacción está sujeta al número de cupos existentes*</small>
+                            <small className="text-font-abel">*Los cupos del curso son limitados*</small>
                             <button 
                                 className="btn btn-primary btn-font-size-24 text-font-abel"
                                 onClick={() => alert('Se procede a comprar el curso')}
-                            >Comprar</button>
+                            >Matricular</button>
                         </div>
                     </div>
                 </ContainerResponsive>

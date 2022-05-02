@@ -57,22 +57,6 @@
             margin-right: 16px;
         }
 
-        .buy__header {
-            gap: 10px;
-
-            @media (max-width: 576px) {
-                flex-direction: column;
-            }
-
-            h1 {
-                color: $secondary;
-            }
-
-            span {
-                margin-bottom: 10px;
-            }
-        }
-
         .buy__details {
             font-family: 'Open Sans', sans-serif;
 
@@ -86,7 +70,7 @@
 
             small {
                 color: $secondary;
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     }
