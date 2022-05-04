@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useContext, useEffect, useLayoutEffect, useRef } from 'react'
+import { useState, useContext, useEffect, useLayoutEffect, useRef } from 'react'
 import { Outlet, UNSAFE_NavigationContext } from 'react-router-dom'
 import { modalEnum } from '../../../enum/modalEnum'
 import { ContactModal } from '../modals/ContactModal'
@@ -6,8 +6,9 @@ import { ModalApp } from '../ui/ModalApp'
 import { TranslateModal } from '../modals/TranslateModal'
 import { SearchModal } from '../modals/SearchModal'
 import { Footer } from '../ui/Footer'
+import Navbar from '../ui/Navbar'
 
-const Navbar = lazy(() => import('../ui/Navbar'))
+//const Navbar = lazy(() => import('../ui/Navbar'))
 
 export default function ClientLayout() {
   const existSearch = useRef("")
@@ -69,7 +70,6 @@ export default function ClientLayout() {
 
   return (
     <div className="grid__container">
-      <Suspense fallback={<span>Cargando textos...</span>}>
         <Navbar
           openModalContact={openModalContact}
           openModalTranslate={openModalTranslate}
@@ -77,7 +77,6 @@ export default function ClientLayout() {
           menuIsOpen={menuIsOpen}
           setMenuIsOpen={setMenuIsOpen}
         />
-      </Suspense>
 
       <>
         <div className="main">

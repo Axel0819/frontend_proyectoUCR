@@ -1,12 +1,10 @@
-import { lazy, Suspense } from "react";
 import { SocialMedia } from "../home/SocialMedia";
 import { Container } from "../layouts/Container";
-// import LinksNavbar from "./LinksNavbar";
-// import LinksNavbar from "./LinksNavbar";
+import LinksNavbar from "./LinksNavbar";
 import { LogoCecamm } from "./LogoCecamm";
 
 
-const LinksNavbar = lazy(() => import('./LinksNavbar'))
+//const LinksNavbar = lazy(() => import('./LinksNavbar'))
 
 export function Footer() {
 
@@ -21,18 +19,16 @@ export function Footer() {
                         </div>
                         <div className="flex flex-column gap-10">
                             <p className="footer__title">Explorar</p>
-                            <Suspense fallback={<p>Cargando</p>}>
-                                <div className="navbar__list flex flex-column align-items-start gap-10">
-                                    <LinksNavbar />
-                                </div>
-                            </Suspense>
+                            <div className="navbar__list flex flex-column align-items-start gap-10">
+                                <LinksNavbar />
+                            </div>
                         </div>
                         <div style={{ width: '150px' }} className="flex flex-column gap-10">
                             <p className="footer__title">Visita</p>
                             <a
                                 rel="noreferrer"
                                 target="_blank"
-                                href="https://maps.google.com/?q=9.983669450112677,-83.06263596931478" 
+                                href="https://maps.google.com/?q=9.983669450112677,-83.06263596931478"
                                 className="footer__info footer-link"
                             >
                                 Costa Rica, Limon. Universidad de Costa Rica, Sede del Caribe

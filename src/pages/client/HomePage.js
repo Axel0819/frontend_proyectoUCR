@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { SectionInfoCecamm } from '../../components/client/home/SectionInfoCecamm';
 import { Header } from '../../components/client/home/Header';
 import { SectionInfoLloyds } from '../../components/client/home/SectionInfoLloyds';
@@ -8,7 +9,6 @@ import { SectionInfoTestim } from '../../components/client/home/SectionInfoTesti
 
 import { testimomials } from '../../data/testimonials'
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { Helmet } from 'react-helmet'
 
 export default function HomePage() {
   useScrollReveal(['.sectionInfoCecamm', '.divider', '.sectionInfoLloyds', '.sectionInfoCourses', '.sectionInfoEquip', '.sectionInfoTestim'])

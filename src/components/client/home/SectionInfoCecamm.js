@@ -5,8 +5,12 @@ import logoBlack from '../../../assets/images/logoBlack.png'
 import { TitleSection } from './TitleSection'
 
 import { CardCountries } from '../cards/CardCountries'
+import { useTranslation } from 'react-i18next'
 
 export const SectionInfoCecamm = () => {
+    const { t } = useTranslation(['home/sectionInfoCecamm'])
+    console.log(t('title'));
+
     return (
         <div className='sectionInfoCecamm load-hidden'>
             <Container>

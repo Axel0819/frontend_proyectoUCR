@@ -1,10 +1,9 @@
 import classNames from 'classnames'
 import { Container } from '../layouts/Container'
 import { LogoCecamm } from './LogoCecamm'
-import { lazy, Suspense } from 'react'
-// import LinksNavbar from './LinksNavbar'
+import LinksNavbar from './LinksNavbar'
 
-const LinksNavbar = lazy(() => import('./LinksNavbar'))
+//const LinksNavbar = lazy(() => import('./LinksNavbar'))
 
 export default function Navbar({ openModalContact, openModalTranslate, openModalSearch, menuIsOpen, setMenuIsOpen }) {
     return (
@@ -19,9 +18,7 @@ export default function Navbar({ openModalContact, openModalTranslate, openModal
                             'menuIsActive': menuIsOpen
                         })
                     }>
-                        <Suspense fallback={<p>Cargando</p>}>
-                            <LinksNavbar />
-                        </Suspense>
+                        <LinksNavbar />
                     </div>
 
                     <div className={

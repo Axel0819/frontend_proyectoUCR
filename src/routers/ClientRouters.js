@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import ClientLayout from '../components/client/layouts/ClientLayout'
-
 import HomePage from '../pages/client/HomePage'
 import AboutUsPage from '../pages/client/AboutUsPage'
 import CoursesPage from '../pages/client/CoursesPage'

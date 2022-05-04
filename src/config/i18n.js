@@ -9,6 +9,7 @@ i18
 .use(initReactI18next)
 .use(Backend)
 .init({
+    debug: true,
     lng: defaultLocale,
     fallbackLng: "es",
 
