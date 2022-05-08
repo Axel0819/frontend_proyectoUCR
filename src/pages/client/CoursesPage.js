@@ -6,10 +6,8 @@ import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { ContainerFilter } from '../../components/client/courses/ContainerFilter'
 import { ContainerCourses } from '../../components/client/courses/ContainerCourses'
 import { CoursesState } from '../../components/client/courses/CoursesState'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 export default function CoursesPage() {
-  useScrollReveal(['.coursesPage-body'], false, 250)
   const [openFilter, setOpenFilter] = useState(false)
   const [heightToFilter, setHeightToFilter] = useState(0)
 
@@ -21,7 +19,7 @@ export default function CoursesPage() {
     <CoursesState>
       <TitleSectionPage title={'Cursos'} />
 
-      <div style={{ position: 'static' }} className='coursesPage-body load-hidden'>
+      <div style={{ position: 'static' }} className='coursesPage-body'>
         <Container>
           <Options openFilter={openFilter} setOpenFilter={setOpenFilter} />
 

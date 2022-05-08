@@ -5,7 +5,7 @@ import { ItemCarousel } from '../ui/ItemCarousel'
 export function SectionInfoLearn({ listLearn = [] }) {
 
     return (
-        <div className="sectionInfoLearn load-hidden my-7">
+        <div className="sectionInfoLearn my-7">
 
             <ContainerResponsive heightAuto={true}>
                 <div  className="xl:col-6 lg:col-6 md:col-12 sm:col-12 learn__container__list">

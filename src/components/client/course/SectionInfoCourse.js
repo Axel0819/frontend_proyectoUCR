@@ -13,7 +13,7 @@ export function SectionInfoCourse({
     fileUrl
 }) {
     return (
-        <div className="container__section__info load-hidden">
+        <div className="container__section__info">
             <Container>
                 <ContainerResponsive heightAuto={true} reverse={true} gap={true}>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 py-7 section__info__description">

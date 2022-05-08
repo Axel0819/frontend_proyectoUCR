@@ -2,11 +2,17 @@ import classNames from 'classnames'
 import Flags from 'country-flag-icons/react/3x2'
 import { useTranslation } from 'react-i18next'
 
-export function TranslateModal() {
+export function TranslateModal({closeModal, setMenuIsOpen}) {
     const { i18n } = useTranslation()
 
-    const handleChangeLanguage = (l) => { // es or en
-        i18n.changeLanguage(l)
+    const handleChangeLanguage = (lenguage) => { // es or en
+        //localStorage.setItem('lenguaje', lenguage)
+
+        //cambiar el esquema del refresh
+        //window.location.reload()
+        i18n.changeLanguage(lenguage)
+        closeModal()
+        setMenuIsOpen(menu => menu && false )
     }
 
     const btnClass = (lenguage) => classNames('btn', 'btn-lenguage', 'text-font-abel', 'btn-font-size-24', {

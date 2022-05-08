@@ -1,15 +1,39 @@
-import React from 'react'
+import { useSetLenguage } from '../../../hooks/useSetLenguage'
+import { useTestimonials } from '../../../hooks/useTestimonials'
 import { CardTestimony } from '../cards/CardTestimony'
 import { Container } from '../layouts/Container'
 import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel'
 import { TitleSection } from './TitleSection'
+// import { testimomials } from '../../../data/testimonials'
 
-export function SectionInfoTestim({ titleSection, subtitleCard, comments }) {
+//{ titleSection, subtitleCard, comments }
+export function SectionInfoTestim() {
+    const { testimonials, cadet, title } = useTestimonials()
+
+    const { controller } = useSetLenguage()
+
+    console.log(controller);
+
+    // const CarouselMemo = useMemo(() => <Carousel options={{
+    //     loop: true,
+    //     align: 'center'
+    // }} stopOnMouseEnter={true}>
+    //     {
+    //         testimonials.map(data => (
+    //             <ItemCarousel key={data.img} fullHeight={false}>
+    //                 <CardTestimony subtitleCard={cadet} {...data} />
+    //             </ItemCarousel>
+    //         ))
+    //     }
+    // </Carousel>, [cadet, testimonials])
+
+    
+
     return (
-        <div className="sectionInfoTestim load-hidden">
+        <div className="sectionInfoTestim">
             <Container>
-                <TitleSection title={titleSection} />
+                <TitleSection title={title} />
 
                 <div className="px-3 my-4">
 
@@ -18,11 +42,11 @@ export function SectionInfoTestim({ titleSection, subtitleCard, comments }) {
                             <Carousel options={{
                                 loop: true,
                                 align: 'center'
-                            }}  stopOnMouseEnter={true}>
+                            }} reload={controller} stopOnMouseEnter={true}>
                                 {
-                                    comments.map(data => (
+                                    testimonials.map(data => (
                                         <ItemCarousel key={data.img} fullHeight={false}>
-                                            <CardTestimony subtitleCard={subtitleCard} {...data} />
+                                            <CardTestimony subtitleCard={cadet} {...data} />
                                         </ItemCarousel>
                                     ))
                                 }
@@ -30,9 +54,9 @@ export function SectionInfoTestim({ titleSection, subtitleCard, comments }) {
                         ) : (
                             <div className="grid">
                                 {
-                                    comments.map(data => (
+                                    testimonials.map(data => (
                                         <div key={data.img} className="col-4">
-                                            <CardTestimony subtitleCard={subtitleCard} {...data} />
+                                            <CardTestimony subtitleCard={cadet} {...data} />
                                         </div>
                                     ))
                                 }
@@ -47,3 +71,6 @@ export function SectionInfoTestim({ titleSection, subtitleCard, comments }) {
         </div>
     )
 }
+
+
+export default SectionInfoTestim

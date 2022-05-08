@@ -1,42 +1,45 @@
-import { useLayoutEffect, useState } from 'react';
+// import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect } from 'react';
 import AppRouter from './routers/AppRouter';
-import LoadApp from './components/loaders/LoadApp';
+// import LoadApp from './components/loaders/LoadApp';
 
 const App = () => {
-  const [load, setLoad] = useState(false)
+  // const [load, setLoad] = useState(false)
 
-  // const scrollX = window.scrollX;
-  // const scrollY = window.scrollY;
-
-  // useLayoutEffect(() => {
-  //   window.scrollTo(scrollX, scrollY);
-  // }, [scrollX, scrollY])
-
-  const hanldeLoad = () => {
-    return new Promise(resolve => {
-      resolve(navigator.onLine)
-    })
-  }
+  const scrollX = window.scrollX;
+  const scrollY = window.scrollY;
 
   useLayoutEffect(() => {
+    window.scrollTo(scrollX, scrollY);
+  }, [scrollX, scrollY])
 
-    const event = async () => {
-      const result = await hanldeLoad()
+  // const hanldeLoad = () => {
+  //   return new Promise(resolve => {
+  //     resolve(navigator.onLine)
+  //   })
+  // }
 
-      setLoad(result)
-    }
+  // useLayoutEffect(() => {
 
-    window.addEventListener("load", event)
+  //   const event = async () => {
+  //     const result = await hanldeLoad()
 
-    return () => window.removeEventListener("load", event)
-  }, [load])
+  //     setLoad(result)
+  //   }
+
+  //   window.addEventListener("load", event)
+
+  //   return () => window.removeEventListener("load", event)
+  // }, [load])
+
+  // <>
+  //     {
+  //       load ? <AppRouter /> : <LoadApp />
+  //     }
+  //   </>
 
   return (
-    <>
-      {
-        load ? <AppRouter /> : <LoadApp />
-      }
-    </>
+      <AppRouter />
   )
 }
 

@@ -5,8 +5,10 @@ export const ImageHeader = ({url}) => {
             <img
                 className="header__img"
                 src={url} 
-                alt="Imagen del CECAMM" 
+                alt="Imagen del CECAMM"
             />
         </>
     )
 }
+
+export default ImageHeader

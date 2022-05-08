@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { descriptionEquip } from '../../../data/textLarge'
 import { imgEquip } from '../../../helpers/appImages'
 import { Container } from '../layouts/Container'
@@ -9,6 +10,7 @@ import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel'
 
 export function SectionInfoEquip() {
+    const { t } = useTranslation('home/sectionInfoEquip')
     const [controllerDescrip, setControllerDescrip] = useState(false)
     const containerRef = useRef()
 
@@ -36,16 +38,16 @@ export function SectionInfoEquip() {
     }, [])
 
     return (
-        <div className="sectionInfoEquip load-hidden py-4" ref={containerRef}>
+        <div className="sectionInfoEquip py-4" ref={containerRef}>
             <Container>
                 <ContainerResponsive reverse={false} heightAuto={true}>
                     <div className="xl:col-6 lg:col-6 md:col-12 sm:col-12 flex flex-column justify-content-center gap-50">
                         <p className={classNameDesp}>
-                            Para el desarrollo de nuestras actividades académicas, contamos con un equipo de talento humano calificado, dotado de los recursos materiales necesarios más idóneos y actualizados para hacer llegar el conocimiento de manera exitosa.
+                            { t('pgh1') }
                         </p>
                         <AccordionApp
                             title={'Más información'}
-                            description={descriptionEquip}
+                            description={t('pgh2')}
                             isBlack={false}
                             colorText={"#FFF"}
                         />
@@ -56,7 +58,7 @@ export function SectionInfoEquip() {
                             loop: true,
                             containScroll: "keepSnaps",
                             align: 'start'
-                        }} play={true} proof={controllerDescrip} stopOnMouseEnter={true}>
+                        }} play={true} reload={controllerDescrip} stopOnMouseEnter={true}>
                             {
 
                                 imgEquip.keys().map(path => (

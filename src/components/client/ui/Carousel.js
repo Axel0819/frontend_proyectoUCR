@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 // proof se refiere a si el carousel esta listo para montarse
-export const Carousel = ({ children, options = { loop: true }, play = true, proof=true, stopOnMouseEnter=false}) => {
+export const Carousel = ({ children, options = { loop: true }, play = true, reload=true, stopOnMouseEnter=false}) => {
 
   const autoplay = useRef(
     Autoplay(
@@ -26,10 +26,12 @@ export const Carousel = ({ children, options = { loop: true }, play = true, proo
   
 
   return (
-    <div className="embla" ref={(proof) ? emblaRef : null}>
+    <div className="embla" ref={(reload) ? emblaRef : null}>
       <div className="embla__container">
         {children}
       </div>
     </div>
   )
 }
+
+export default Carousel

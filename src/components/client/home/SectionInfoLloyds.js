@@ -5,10 +5,13 @@ import { TitleSection } from './TitleSection'
 import { appImages } from '../../../helpers/appImages'
 import { AccordionApp } from '../ui/AccordionApp'
 import { descriptionLloydR } from '../../../data/textLarge'
+// import { useTranslation } from 'react-i18next'
 
 export function SectionInfoLloyds() {
+    // const { t } = useTranslation('home/sectionInfoLloyds')
+    
     return (
-        <div className="sectionInfoLloyds load-hidden my-8">
+        <div className="sectionInfoLloyds my-8">
             <Container>
                 <ContainerResponsive reverse={false} heightAuto={true}>
                     <div className="xl:col-7 lg:col-7 md:col-12 sm:col-12 flex justify-content-center align-items-center container__logo">

@@ -19,13 +19,13 @@ export function ContainerCourses({ openFilter, heightToFilter }) {
 
     const titleSearch = !filters.q ? 'Cursos abiertos' : `Resultados para "${filters.q}"`
 
-    const proof = classNames('container__courses__results', {
+    const classCoursesRes = classNames('container__courses__results', {
         'filterIsOpenMovil': openFilter && window.innerWidth <= 576
     })
 
     //TODO: Crear una alerta si no existe un resultado
     return (
-        <div className={proof}>
+        <div className={classCoursesRes}>
             {
                 (isEmpty || !!filters.q) && (
                     <div className="mb-4 containerCourses-title">

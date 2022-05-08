@@ -1,17 +1,15 @@
 import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { SectionInfoCourse } from '../../components/client/course/SectionInfoCourse'
-import { SectionInfoLearn } from '../../components/client/course/SectionInfoLearn';
-import { SectionInfoTestim } from '../../components/client/home/SectionInfoTestim';
-import { dataCourseLearn } from '../../data/dataCourse';
-import { testimomials } from '../../data/testimonials';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { SectionInfoLearn } from '../../components/client/course/SectionInfoLearn'
+import { SectionInfoTestim } from '../../components/client/home/SectionInfoTestim'
+import { dataCourseLearn } from '../../data/dataCourse'
+import { testimomials } from '../../data/testimonials'
 
 export function CoursePage() {
     const { id } = useParams()
 
     const titleCourse = "Primeros Auxilios Básicos"
-    useScrollReveal(['.container__section__info', '.sectionInfoLearn', '.sectionInfoTestim'], true, 250)
 
     return (
         <>

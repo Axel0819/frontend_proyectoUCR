@@ -2,7 +2,7 @@ import { Container } from "../layouts/Container";
 
 export function Divider() {
     return (
-        <div className="divider load-hidden">
+        <div className="divider">
             
             <Container>
                 <div className="flex justify-content-center divider px-3">

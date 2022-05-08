@@ -3,7 +3,6 @@ import { Container } from '@mui/material'
 import { TableApp } from '../../components/client/prices/TableApp'
 import { TitleSectionPage } from '../../components/client/ui/TitleSectionPage'
 import { SearchBarDebounce } from '../../components/client/ui/SearchBarDebounce'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
 import Helmet from 'react-helmet'
 import { columnsPrices, rows } from '../../data/dataTable'
 
@@ -14,8 +13,6 @@ export default function PricesPage() {
   const sizeQueryPrices = 9
 
   const title = !keyword ? 'Prices' : `${sizeQueryPrices} resultados para ${keyword}`
-
-  useScrollReveal(['.pricesPage-body'], false, 250)
 
   const handleSearch = (value) => {
     setKeyword(value)
@@ -32,7 +29,7 @@ export default function PricesPage() {
       <TitleSectionPage title={'Nuestros precios'} />
       <div className="container__prices flex justify-content-center my-6">
         <Container maxWidth="xl">
-          <div className="flex flex-column gap-20 pricesPage-body load-hidden">
+          <div className="flex flex-column gap-20 pricesPage-body">
             <SearchBarDebounce setKeyword={setKeyword} handleSearch={handleSearch} focus={false} />
             <TableApp titleHead={'Información de los cursos'} columns={columnsPrices} rows={ rows } />
           </div>

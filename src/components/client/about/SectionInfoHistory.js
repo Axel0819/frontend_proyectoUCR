@@ -7,7 +7,7 @@ import { ContainerResponsive } from '../layouts/ContainerResponsive'
 export function SectionInfoHistory() {
     
     return (
-        <div className="sectionInfoHistory load-hidden my-6">
+        <div className="sectionInfoHistory my-6">
             <Container>
                 <h1 className="text-font-abel title__section__about px-3 mb-4">Nuestra Historia</h1>
 

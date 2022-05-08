@@ -92,7 +92,7 @@ export default function ClientLayout() {
         )}
 
         {typeModal === modalEnum.translate && (
-          <TranslateModal />
+          <TranslateModal closeModal={closeModal} setMenuIsOpen={setMenuIsOpen}/>
         )}
 
         {typeModal === modalEnum.search && (
