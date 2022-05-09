@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 //Actualmente este elemento no se esta utilizando
 export function useActiveElement() {

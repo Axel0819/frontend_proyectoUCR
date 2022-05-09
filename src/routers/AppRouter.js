@@ -8,13 +8,15 @@ const ClientRouters = lazy(() => import('./ClientRouters'))
 
 export default function AppRouter() {
   return (
-    <Suspense fallback={ <h1>Cargando...</h1> }>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/*" element={<ClientRouters />} />
-          <Route path="admin/*" element={<AdminRouters />} />
-        </Routes>
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={
+          <Suspense fallback={<h1>Cargando...</h1>}>
+            <ClientRouters />
+          </Suspense>
+        } />
+        <Route path="admin/*" element={<AdminRouters />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

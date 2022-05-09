@@ -41,3 +41,6 @@ export function SectionInfoCourses() {
         </div>
     )
 }
+
+
+export default SectionInfoCourses

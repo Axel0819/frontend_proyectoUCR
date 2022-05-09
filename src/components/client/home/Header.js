@@ -14,27 +14,25 @@ export const Header = () => {
   // const { controller } = useSetLenguage()
 
   const CarouselMemo = useMemo(() => <Carousel>
-  {
-    imgHeader.keys().map((path) => (
-      <ItemCarousel key={path} fullHeight={true}>
-        <ImageHeader url={imgHeader(path)} />
-      </ItemCarousel>
-    ))
-  }
-</Carousel>, [])
+    {
+      imgHeader.keys().map((path) => (
+        <ItemCarousel key={path} fullHeight={true}>
+          <ImageHeader url={imgHeader(path)} />
+        </ItemCarousel>
+      ))
+    }
+  </Carousel>, [])
 
   return (
     <header className="home__header mb-3">
       <div className="home__header__title">
         <h6 className="text-font-abel"> {t('title')} </h6>
         <p className="text-font-open-sans">
-          { t('subtitle') }
+          {t('subtitle')}
         </p>
       </div>
 
-      <Suspense fallback={<span>Load</span>}>
-        {CarouselMemo}
-      </Suspense>
+      {CarouselMemo}
 
 
       <Container>
@@ -44,3 +42,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header
