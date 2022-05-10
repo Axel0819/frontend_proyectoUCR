@@ -1,6 +1,9 @@
 {
-    "mission":"Somos un centro de capacitación que ofrece a profesionales, organizaciones públicas y privadas del sector marítimo-portuario, servicios de calidad con instructores altamente calificados y con la finalidad de que nuestros participantes alcancen las competencias que les permita contribuir al desarrollo de su organización y por ende al progreso de la Marina Mercante.",
-    "vision": "Consolidar en Costa Rica y la región Latinoamericana, nuestra posición como centro de capacitación de excelencia, con egresados de nuestros cursos que les permitan incorporarse o mantenerse con éxito al campo laboral marítimo-portuario.",
+    "missionT":"Misión",
+    "visionT":"Visión",
+    "objectivesT":"Objetivos",
+    "missionD":"Somos un centro de capacitación que ofrece a profesionales, organizaciones públicas y privadas del sector marítimo-portuario, servicios de calidad con instructores altamente calificados y con la finalidad de que nuestros participantes alcancen las competencias que les permita contribuir al desarrollo de su organización y por ende al progreso de la Marina Mercante.",
+    "visionD": "Consolidar en Costa Rica y la región Latinoamericana, nuestra posición como centro de capacitación de excelencia, con egresados de nuestros cursos que les permitan incorporarse o mantenerse con éxito al campo laboral marítimo-portuario.",
     "obj1": "Capacitar profesionales para la aplicación de conocimientos que les permita contribuir en sus organizaciones a la planeación, ejecución y evaluación de actividades en el campo laboral marítimo-portuario.",
     "obj2": "Favorecer los procesos de capacitación de calidad continua, pertinente y en el logro de las competencias.",
     "obj3": "Realizar cursos vinculados con los nuevos retos que demandan el desarrollo económico, tecnológico y social de la Marina Mercante en el mundo.",

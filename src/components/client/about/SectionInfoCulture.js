@@ -1,11 +1,11 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import { dataCulture } from '../../../data/dataCulture'
+// import { dataCulture } from '../../../data/dataCulture'
 import { CardCulture } from '../cards/CardCulture'
 import { Container } from '../layouts/Container'
 import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel'
 
-export function SectionInfoCulture() {
+export function SectionInfoCulture({ dataCulture }) {
     const cardRef = useRef([])
 
     useLayoutEffect(() => {
@@ -15,7 +15,7 @@ export function SectionInfoCulture() {
         cardRef.current.forEach(e => {
             e.style.height = `${maxHeight}px`
         })
-    }, [])
+    }, [dataCulture])
 
     return (
         <div className="sectionInfoCulture my-6">
@@ -58,5 +58,6 @@ export function SectionInfoCulture() {
                 </div>
             </Container>
         </div>
+
     )
 }
