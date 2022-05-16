@@ -1,6 +1,7 @@
 import { useFormik, FormikProvider } from 'formik'
 import { useEffect, useState } from 'react';
 import * as yup from 'yup'
+import { fetchApp } from '../../../helpers/fetch';
 import { AlertSuccess } from '../ui/AlertSuccess';
 import { InputForm } from './InputForm';
 
@@ -16,22 +17,29 @@ export const ContactModal = ({ closeModal }) => {
     const formik = useFormik({
         initialValues: {
             name: '',
-            firstName: '',
-            lastName: '',
+            firstSurname: '',
+            secondSurname: '',
             email: '',
             phone: '',
             message: ''
         },
         validationSchema: yup.object().shape({
             name: yup.string().required('Este campo es requerido').matches(/^[aA-zZ\S]+$/, 'No se aceptan espacios'),
-            firstName: yup.string().required('Este campo es requerido').matches(/^[aA-zZ\S]+$/, 'No se aceptan espacios'),
-            lastName: yup.string().required('Este campo es requerido').matches(/^[aA-zZ\S]+$/, 'No se aceptan espacios'),
+            firstSurname: yup.string().required('Este campo es requerido').matches(/^[aA-zZ\S]+$/, 'No se aceptan espacios'),
+            secondSurname: yup.string().required('Este campo es requerido').matches(/^[aA-zZ\S]+$/, 'No se aceptan espacios'),
             email: yup.string().email('Formato de email incorrecto').required('Este campo es requerido'),
             phone: yup.string().matches(/^[0-9]+$/, "Formato de número incorrecto").min(8, 'Formato de número incorrecto').max(8, 'Formato de número incorrecto'),
             message: yup.string().required('Este campo es requerido'),
         }),
-        onSubmit: (values, actions) => {
+        onSubmit: async (values, actions) => {
             console.log(values);
+
+            const resp = await fetchApp('contact', values, 'POST')
+            const data = await resp.json()
+
+            // si todo va bien, se muestra la alerta se success
+            console.log(data)
+
             setOpen(true)
             triggerTimeout()
             actions.resetForm()
@@ -54,8 +62,8 @@ export const ContactModal = ({ closeModal }) => {
                         <AlertSuccess open={open} setOpen={setOpen} />
                         <div className="flex gap-20">
                             <InputForm name="name" formik={formik} />
-                            <InputForm name="firstName" formik={formik} />
-                            <InputForm name="lastName" formik={formik} />
+                            <InputForm name="firstSurname" formik={formik} />
+                            <InputForm name="secondSurname" formik={formik} />
                         </div>
 
                         <div>
