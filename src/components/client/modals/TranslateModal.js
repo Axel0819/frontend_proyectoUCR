@@ -3,7 +3,7 @@ import Flags from 'country-flag-icons/react/3x2'
 import { useTranslation } from 'react-i18next'
 
 export function TranslateModal({closeModal, setMenuIsOpen}) {
-    const { i18n } = useTranslation()
+    const { t, i18n } = useTranslation('components/translateModal')
 
     const handleChangeLanguage = (lenguage) => { // es or en
         //localStorage.setItem('lenguaje', lenguage)
@@ -30,7 +30,7 @@ export function TranslateModal({closeModal, setMenuIsOpen}) {
                 <button 
                     className={btnClass('es')}
                     onClick={() => handleChangeLanguage('es')}
-                >Español</button>
+                >{ t('es') }</button>
             </div>
 
             <div className="flex flex-column gap-40 align-items-center container__flag_au">
@@ -41,7 +41,7 @@ export function TranslateModal({closeModal, setMenuIsOpen}) {
                 <button 
                     className={btnClass('en')}
                     onClick={() => handleChangeLanguage('en')}
-                >Inglés</button>
+                >{ t('en') }</button>
             </div>
 
         </div>

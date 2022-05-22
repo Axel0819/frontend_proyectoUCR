@@ -5,7 +5,7 @@ import { Container } from '../layouts/Container'
 import { Carousel } from '../ui/Carousel'
 import { ItemCarousel } from '../ui/ItemCarousel'
 
-export function SectionInfoCulture({ dataCulture }) {
+export function SectionInfoCulture({ dataCulture, t }) {
     const cardRef = useRef([])
 
     useLayoutEffect(() => {
@@ -21,7 +21,7 @@ export function SectionInfoCulture({ dataCulture }) {
         <div className="sectionInfoCulture my-6">
             <Container>
                 <div className="flex flex-column gap-20">
-                    <h1 className="text-font-abel text-center title__section__about">Nuestra Cultura</h1>
+                    <h1 className="text-font-abel text-center title__section__about">{t('title')}</h1>
 
                     {
                         window.innerWidth < 1280 ? (

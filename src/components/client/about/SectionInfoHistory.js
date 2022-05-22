@@ -12,7 +12,7 @@ export function SectionInfoHistory() {
     return (
         <div className="sectionInfoHistory my-6">
             <Container>
-                <h1 className="text-font-abel title__section__about px-3 mb-2">Nuestra Historia</h1>
+                <h1 className="text-font-abel title__section__about px-3 mb-2">{t('title')}</h1>
 
                 <ContainerResponsive reverse={false} heightAuto={true} isHistory={true}>
                     <div className="col px-3 py-3 flex align-items-center"> 

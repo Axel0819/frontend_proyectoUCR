@@ -55,7 +55,7 @@ export default function AboutUsPage() {
                    },
                ]
 
-               return <SectionInfoCulture dataCulture={dataCulture} />
+               return <SectionInfoCulture t={t} dataCulture={dataCulture} />
               }}
             </Translation>
 

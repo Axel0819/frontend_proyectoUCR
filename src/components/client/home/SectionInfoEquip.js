@@ -46,7 +46,7 @@ export function SectionInfoEquip() {
                             { t('pgh1') }
                         </p>
                         <AccordionApp
-                            title={'Más información'}
+                            title={t('subtitle')}
                             description={t('pgh2')}
                             isBlack={false}
                             colorText={"#FFF"}

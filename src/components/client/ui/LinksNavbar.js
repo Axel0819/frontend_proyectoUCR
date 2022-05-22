@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 
 export default function LinksNavbar() {
-    // const { t } = useTranslation(['navbar'])
+    const { t } = useTranslation('components/linksNavbar')
     
     return (
         <>
@@ -11,27 +11,26 @@ export default function LinksNavbar() {
                 className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
                 to="/"
             >
-                Inicio
+                { t('home') }
             </NavLink>
 
             <NavLink
                 className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
                 to="aboutus"
             >
-                ¿Quiénes Somos?
+                { t('about') }
             </NavLink>
             <NavLink
                 className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
                 to="courses"
             >
-                Cursos
+                { t('courses') }
             </NavLink>
             <NavLink
                 className={({ isActive }) => classNames({ 'navbar__item__active': isActive })}
                 to="prices"
             >
-                Precios
-                {/* {t('proof')} */}
+                { t('prices') }
             </NavLink>
         </>
     )

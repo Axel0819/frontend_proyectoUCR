@@ -6,6 +6,7 @@ import LinksNavbar from './LinksNavbar'
 //const LinksNavbar = lazy(() => import('./LinksNavbar'))
 
 export default function Navbar({ openModalContact, openModalTranslate, openModalSearch, menuIsOpen, setMenuIsOpen }) {
+
     return (
         <nav className="navbar flex flex-column justify-content-center">
             <Container>
